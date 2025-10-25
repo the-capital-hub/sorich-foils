@@ -1,18 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Inter, Fustat } from "next/font/google";
 
-// Import your images
-import building from "@/public/Building.png"; 
+
+import building from "@/public/about.png"; 
 import founder from "@/public/founder.png";
 import company from "@/public/group2.png";
 
 const instrument = Instrument_Sans({
-  weight: ["700", "400"],
+  weight: ["600", "400"],
   subsets: ["latin"],
   display: "swap",
 });
+
+const fustat = Fustat({
+    weight: ["600"],
+    subsets: ["latin"],
+    display: "swap",
+  });
+
+const inter = Inter({
+    weight: ["700", "400"],
+    subsets: ["latin"],
+    display: "swap",
+  });
 
 const AboutUs = () => {
   return (
@@ -23,18 +35,18 @@ const AboutUs = () => {
           <Image
             src={building}
             alt="About Us Building"
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[700px] object-cover"
           />
         </div>
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[120px] text-center px-4">
+        <div className="absolute top-[45%] left-[23%] transform -translate-x-1/2 translate-y-[120px] text-center px-4">
           <h1
-            className={`text-6xl font-bold ${instrument.className} tracking-tight`}
+            className={`text-3xl md:text-9xl font-semibold ${instrument.className} tracking-tight`}
           >
             ABOUT US
           </h1>
           <p
-            className={`text-gray-700 mt-4 max-w-2xl mx-auto ${instrument.className}`}
+            className={`text-[#31373D] mt-4 max-w-2xl mx-auto ${instrument.className} text-2xl`}
           >
             At Sorich Foils Limited, we believe we are not just a company — we
             are part of you, contributing to healthier lives and a better
@@ -44,18 +56,18 @@ const AboutUs = () => {
       </div>
 
       {/* ---------- Founder Section ---------- */}
-      <div className="w-full flex justify-center mt-44 px-6">
-        <div className="max-w-7xl w-full bg-white rounded-[20px] shadow-sm border border-gray-200 p-8 lg:p-12 flex flex-col lg:flex-row gap-10">
+      <div className="w-full flex justify-center mt-44 px-6 ">
+        <div className="max-w-7xl w-full bg-white rounded-[20px] shadow-sm border-b-10 border-l-10 black p-16 lg:p-12 flex flex-col lg:flex-row gap-10">
           {/* Founder Photo */}
-          <div className="flex flex-col items-center bg-gray-50 rounded-2xl overflow-hidden shadow-[4px_4px_0px_#00000020]">
+          <div className="flex flex-col items-center bg-[#F8F8F8] rounded-2xl overflow-hidden p-4">
             <Image
               src={founder}
               alt="Founder"
-              className="w-[280px] h-[320px] object-cover"
+              className="w-[340px] h-[440px] object-cover"
             />
             <div className="bg-black text-white w-full text-center py-3">
-              <p className="font-semibold text-lg">Mr. Chandrahas B. Kotian</p>
-              <p className="text-sm opacity-80">Our Founder</p>
+              <h5 className={`text-xl ${fustat.className}`}>Mr. Chandrahas B. Kotian</h5>
+              <p className={`text-sm opacity-80 mt-16 text-[#E6FAF5] ${fustat.className}`}>Our Founder</p>
               <div className="flex justify-center gap-4 mt-2">
                 <a href="#" aria-label="LinkedIn">
                   <i className="fa-brands fa-linkedin text-white text-lg"></i>
@@ -72,8 +84,8 @@ const AboutUs = () => {
 
           {/* Founder Text */}
           <div className="flex-1">
-            <h2 className="text-3xl font-bold mb-4">Our Founder</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className={`text-5xl font-bold mb-4 text-[#1A1A1A] ${inter.className}`}>Our Founder</h2>
+            <p className={`text-[#31373D] text-xl leading-relaxed mb-4 ${instrument.className} font-normal`}>
               Mr. Chandrahas B. Kotian, aged 53, is a visionary Printing
               Technocrat with over three decades of experience in the
               pharmaceutical industry. Specializing in high-quality pharma
@@ -81,7 +93,7 @@ const AboutUs = () => {
               strategic growth, and advanced machinery, he combines deep
               technical expertise with strong commercial acumen.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className={`text-[#31373D] text-xl leading-relaxed mb-4 ${instrument.className} font-normal`}>
               Having built extensive relationships with pharmaceutical
               manufacturing plants and corporate offices across India, Mr.
               Kotian leveraged his experience to become a successful entrepreneur
@@ -91,7 +103,7 @@ const AboutUs = () => {
               clients, setting benchmarks in quality, innovation, and customer
               satisfaction.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className={`text-[#31373D] text-xl leading-relaxed mb-4 ${instrument.className} font-normal`}>
               Mr. Kotian is also a proud innovator, holding two patents in the
               field of pharmaceutical packaging, reflecting his commitment to
               advancing technology and delivering unique solutions. His
@@ -105,13 +117,17 @@ const AboutUs = () => {
       </div>
 
       {/* ---------- Company Section ---------- */}
-      <div className="w-full flex justify-center mt-20 px-6">
-        <div className="max-w-7xl w-full bg-gray-50 rounded-[20px] p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-10 shadow-sm border border-gray-200">
+      <div className="w-full flex justify-center mt-20 px-6 lg:mb-20">
+        <div className="max-w-7xl w-full bg-[#F0F0F0] rounded-[20px] p-8 lg:p-12 items-center gap-10 shadow-sm border border-gray-200">
           {/* Company Text */}
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold mb-2">Our Company</h2>
-            <h3 className="text-2xl font-semibold mb-4">We are a part of you.</h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
+          
+          <h2 className={`text-5xl font-bold mb-2 ${instrument.className} text-center`}>Our Company</h2>
+          
+         <div className="flex flex-col lg:flex-row mt-20">
+         <div className="flex-1">
+            
+            <h3 className={`text-5xl font-semibold mb-4 ${instrument.className}`}>We are a part of you.</h3>
+            <p className={`text-[#31373DCC] leading-relaxed mb-6 max-w-xl text-xl ${instrument.className} font-normal`}>
               Our Company was incorporated as "Sorich Foils Private Limited" on
               January 19, 2011 under the Companies Act, 1956, with the Registrar
               of Companies, Ahmedabad, Gujarat. Pursuant to a special resolution
@@ -131,13 +147,14 @@ const AboutUs = () => {
           </div>
 
           {/* Company Image */}
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-2xl lg:-mr-4 ">
             <Image
               src={company}
               alt="Sorich Foils Pvt. Ltd."
-              className="w-[400px] h-[300px] object-cover"
+              className="w-[650px] h-[450px] object-cover"
             />
           </div>
+         </div>
         </div>
       </div>
     </section>
