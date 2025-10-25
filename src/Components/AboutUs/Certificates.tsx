@@ -3,6 +3,7 @@
 import Image from "next/image";
 import certIcon from "@/public/Medal.png";
 import { Instrument_Sans, Inter } from "next/font/google";
+import RoundedActionButton from "../Common/Button";
 
 
 const instrument = Instrument_Sans({
@@ -75,12 +76,9 @@ const Certificates = () => {
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-gray-300 rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
+              className="flex items-center gap-2  rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
             >
-              Open
-              <span className="bg-lime-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
-                →
-              </span>
+              <RoundedActionButton text="Open" />
             </a>
           </div>
         ))}
@@ -111,12 +109,9 @@ const Certificates = () => {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-gray-300 rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
+              className="flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
             >
-              Open
-              <span className="bg-lime-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
-                →
-              </span>
+              <RoundedActionButton text="Open" />
             </a>
           </div>
 
