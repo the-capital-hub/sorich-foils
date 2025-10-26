@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { Instrument_Sans, Inter, Fustat } from "next/font/google";
-
-
+import RoundedActionButton from "../Common/Button";
+import bg from "@/public/bg3.png"
 import building from "@/public/about.png"; 
 import founder from "@/public/founder.png";
 import company from "@/public/group2.png";
@@ -28,7 +28,14 @@ const inter = Inter({
 
 const AboutUs = () => {
   return (
-    <section className="flex flex-col items-center justify-center w-full bg-white text-black">
+    <section className="flex flex-col items-center justify-center w-full bg-white text-black pt-28">
+       <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover -z-10"
+        /> 
       {/* ---------- Top Section ---------- */}
       <div className="relative w-full max-w-7xl mt-10">
         <div className="overflow-hidden rounded-[30px]">
@@ -138,12 +145,9 @@ const AboutUs = () => {
               of our Company is U27203GJ2011PLC063709.
             </p>
 
-            <button className="bg-white border border-gray-300 text-black font-semibold px-5 py-2 rounded-full flex items-center gap-2 hover:bg-gray-100 transition">
-              Read More
-              <span className="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-sm">
-                →
-              </span>
-            </button>
+            <div>
+            <RoundedActionButton text="Read More" textColor="text-black" borderColor="border-black"/>
+            </div>
           </div>
 
           {/* Company Image */}

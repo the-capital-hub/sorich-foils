@@ -2,6 +2,10 @@
 
 import { ArrowUpRight, Facebook, Instagram, Twitter, Weight } from "lucide-react";
 import { Manrope,Outfit, Inter } from "next/font/google";
+import bg from"@/public/bg3.png"
+import bg1 from"@/public/bg4.png"
+import Image from "next/image";
+import RoundedActionButton from "../Common/Button";
 
 const manrope = Manrope({
     weight : ["400","700"],
@@ -25,6 +29,13 @@ const outfit = Outfit({
 export default function ContactSection() {
   return (
     <section className="w-full bg-white text-black">
+    <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover -z-10"
+        /> 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative">
         {/* Social Icons */}
@@ -41,6 +52,7 @@ export default function ContactSection() {
         </div>
 
         <div>
+     
           <p className={`text-xl font-medium text-[#000000] mb-2 ${manrope.className}`}>Get Started</p>
           <h1 className={`text-4xl md:text-7xl font-bold leading-tight ${manrope.className}`}>
             Get in touch with us. <br />
@@ -84,20 +96,17 @@ export default function ContactSection() {
             ></textarea>
           </div>
 
-          <div className="md:col-span-3 mt-4">
-            <button
-              type="submit"
-              className={`flex items-center gap-2 border border-black px-6 py-3 rounded-full font-medium hover:bg-[rgba(157,200,52,1)] hover:border-transparent transition ${outfit.className}`}
-            >
-              Leave a Message
-              <ArrowUpRight size={18} />
-            </button>
+          <div className="md:col-span-3 mt-4 ">
+          <div className="flex items-center gap-2px-6 py-3 rounded-full font-medium hover:bg-[rgba(157,200,52,1)] hover:border-transparent transition ${outfit.className}">
+          <RoundedActionButton text="Leave a Message" textColor="text-black" borderColor="border-black"/>
+          </div>
           </div>
         </form>
       </div>
 
       {/* Footer Contact Info */}
       <div className="bg-gray-50 py-16 px-6 md:px-20">
+      
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           <div>
             <p className={`text-xl text-[#000000] font-normal mb-2 ${inter.className}`}>Contact Info</p>

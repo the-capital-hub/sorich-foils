@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import investors from "@/public/bg2.png";
 import { Inter, Manrope } from "next/font/google"; 
+import RoundedActionButton from "../Common/Button";
 
 
 
@@ -21,7 +22,7 @@ const manrope = Manrope({
 
 const Investors = () => {
   return (
-    <section className="min-h-screen bg-white text-gray-900 p-16">
+    <section className="min-h-screen bg-white text-gray-900 p-16 lg:mt-20">
       {/* Hero Section */}
       <div className="flex relative w-[95%] h-[720px] rounded-3xl overflow-hidden mb-16 justify-items-center lg:ml-6">
         <Image
@@ -137,16 +138,9 @@ const Investors = () => {
     </div>
 
     {/* Submit Button */}
-    <div className="pt-4">
-      <button
-        type="submit"
-        className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-gray-300 text-gray-900 hover:bg-gray-100 transition"
-      >
-        Send Request
-        <span className="w-6 h-6 bg-lime-400 flex items-center justify-center rounded-full">
-          <ArrowRight className="w-4 h-4 text-black" />
-        </span>
-      </button>
+    <div className="pt-4 inline-flex items-center gap-2 px-6 py-2 rounded-full text-gray-900 transition">
+
+      <RoundedActionButton text="Send Request" textColor="text-black" borderColor="border-black"/>
     </div>
   </form>
 </div>
@@ -155,3 +149,6 @@ const Investors = () => {
 };
 
 export default Investors;
+
+
+//<RoundedActionButton text="View More" textColor="text-black" borderColor="border-black"/>

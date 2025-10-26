@@ -5,6 +5,7 @@ import bg from "@/public/bg.png"
 import first from "@/public/firstBuilding.png"
 import Image from "next/image";
 import { Instrument_Sans, Inter, Outfit } from "next/font/google";
+import RoundedActionButton from "../Common/Button";
 
 const instrument = Instrument_Sans({
     weight: ["700"],
@@ -41,7 +42,7 @@ const HeroSection = () => {
         />
      
 
-      <div className="max-w-7xl mx-auto flex flex-col items-center space-y-6 text-white">
+      <div className="max-w-7xl mx-auto flex flex-col items-center space-y-6 text-white lg:mt-8">
         {/* Small text */}
         <p className={`text-xl md:text-sm tracking-widest uppercase text-[#FFFFFF] ${outfit.className}`}>
           100% Trusted Company
@@ -53,16 +54,13 @@ const HeroSection = () => {
         </h1>
 
         {/* Description */}
-        <p className={`text-xl md:text-base text-[#FFFFFF] max-w-2xl leading-relaxed ${inter.className}`}>
+        <p className={`text-xl md:text-base text-[#FFFFFF] max-w-2xl leading-relaxed ${inter.className} mb-12`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
         {/* Button */}
-        <button className="mt-4 flex items-center gap-2 bg-[rgba(157,200,52,1)] text-black font-medium px-6 py-2 rounded-full transition-all hover:scale-105">
-          Contact Us
-          <ArrowRight size={16} />
-        </button>
+        <RoundedActionButton/>
 
         {/* Video Section */}
         <div className="mt-10 border-4 border-[rgba(157,200,52,1)] rounded-3xl overflow-hidden shadow-xl w-full bg-linear-to-b from-[#9DC834] to-[#FFFFFF]">
