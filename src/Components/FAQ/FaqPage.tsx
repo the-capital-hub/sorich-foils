@@ -8,7 +8,10 @@ export default function FAQPage() {
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
 	useEffect(() => {
-		setIsVisible(true);
+		const timer = setTimeout(() => {
+			setIsVisible(true);
+		}, 0);
+		return () => clearTimeout(timer);
 	}, []);
 
 	const faqs = [
@@ -105,7 +108,7 @@ export default function FAQPage() {
 										{faq.question}
 									</h3>
 									<ChevronDown
-										className={`w-5 h-5 text-[#9DC834] transition-transform flex-shrink-0 ml-4 ${
+										className={`w-5 h-5 text-[#9DC834] transition-transform shrink-0 ml-4 ${
 											expandedIndex === index ? "rotate-180" : ""
 										}`}
 									/>

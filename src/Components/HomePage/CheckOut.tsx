@@ -22,7 +22,7 @@ const instrument = Instrument_Sans({
 
 export default function StoreMapSection() {
   return (
-    <section className="w-full py-16 bg-white text-center">
+    <section className="w-full py-10 px-6 bg-white text-center">
       {/* Heading */}
       <h2 className={`text-3xl md:text-6xl text-[#111827] mb-10 ${instrument.className}`}>
         Check Out Our Stores In The World

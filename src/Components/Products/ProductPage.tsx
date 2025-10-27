@@ -93,7 +93,7 @@ const OurProducts = () => {
 
 				{/* Avatars */}
 				<div className="flex mt-10 space-x-[10px]">
-					{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+					{[1, 2, 3, 4, 5].map((i) => (
 						<Image
 							key={i}
 							src={user1}
@@ -133,7 +133,7 @@ const OurProducts = () => {
 								</p>
 							</div>
 							<div
-								className={`mt-4 inline-flex items-center  text-sm font-medium text-[#000000] hover:text-black transition ${outfit.className}`}
+								className={`mt-4 inline-flex items-center text-sm font-medium text-[#000000] hover:text-black transition ${outfit.className} w-full flex justify-center md:justify-start`}
 							>
 								<RoundedActionButton
 									text="Read More"
