@@ -5,7 +5,6 @@ import MilestoneCard from "@/src/Components/Milestones/MilestoneCard";
 import Image from "next/image";
 // import timeline from "@/public/timeline.svg";
 import circularBg from "@/public/circularBg.svg";
-import Footer from "../Common/Footer";
 
 interface Milestone {
 	id: number;
@@ -84,7 +83,7 @@ export default function MilestonesPage() {
 	}, []);
 
 	return (
-		<div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
+		<div className="min-h-screen bg-white pt-20 pb-10 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
 			{/* Background SVGs */}
 			<Image
 				src={circularBg}
@@ -94,7 +93,7 @@ export default function MilestonesPage() {
 				className="w-auto object-contain absolute top-0 left-0 inset-0"
 			/>
 
-			<div className="text-center mb-20 z-10 relative">
+			<div className="text-center my-20 z-10 relative">
 				<h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-2">
 					Milestones
 				</h1>
@@ -168,9 +167,6 @@ export default function MilestonesPage() {
 					))}
 				</div>
 			</div>
-
-			{/* Footer */}
-			<Footer />
 		</div>
 	);
 }
