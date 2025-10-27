@@ -50,7 +50,7 @@ export default function TestimonialSection() {
 	];
 
 	return (
-		<section className="py-20 px-4 bg-[rgba(246,246,246,1)] text-black">
+		<section className="py-10 px-6 bg-[rgba(246,246,246,1)] text-black">
 			<div className="max-w-7xl mx-auto text-center">
 				{/* Section Header */}
 				<div className="flex justify-center mb-4">

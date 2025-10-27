@@ -208,7 +208,8 @@ export default function BlogSection() {
 						<ArrowLeft className="w-4 h-4" /> Previous
 					</button>
 
-					<div className="flex gap-2">
+					{/* Desktop Pagination */}
+					<div className="hidden md:flex gap-2">
 						{[1, 2, 3, 4, 5].map((n) => (
 							<button
 								key={n}

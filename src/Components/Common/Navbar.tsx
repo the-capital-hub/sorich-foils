@@ -175,6 +175,7 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
 						transition={{ delay: 0.7, duration: 0.3 }}
 						whileHover={{ y: -2 }}
 						whileTap={{ scale: 0.95 }}
+						className="mr-8"
 					>
 						{pathname === "/" ? (
 							<RoundedActionButton url="/contact" />

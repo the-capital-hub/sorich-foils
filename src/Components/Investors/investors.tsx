@@ -22,7 +22,7 @@ const Investors = () => {
 	return (
 		<section className="min-h-screen bg-white text-gray-900 p-10 pt-20">
 			{/* Hero Section */}
-			<div className="flex relative w-[95%] h-[720px] rounded-3xl overflow-hidden mb-16 justify-items-center lg:ml-6">
+			<div className="flex relative md:w-[95%] h-auto md:h-[720px] rounded-3xl overflow-hidden mb-16 justify-items-center lg:ml-6">
 				<Image
 					src={investors}
 					alt="Investors"
@@ -153,11 +153,13 @@ const Investors = () => {
 					</div>
 
 					{/* Submit Button */}
-					<RoundedActionButton
-						text="Send Request"
-						textColor="text-black"
-						borderColor="border-black"
-					/>
+					<div className="w-full flex justify-center md:justify-start">
+						<RoundedActionButton
+							text="Send Request"
+							textColor="text-black"
+							borderColor="border-black"
+						/>
+					</div>
 				</form>
 			</div>
 		</section>

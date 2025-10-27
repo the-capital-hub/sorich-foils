@@ -5,10 +5,13 @@ import { ChevronDown } from "lucide-react";
 
 export default function HelpPage() {
 	const [isVisible, setIsVisible] = useState(false);
-	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+	const [expandedIndex, setExpandedIndex] = useState<string | null>(null);
 
 	useEffect(() => {
-		setIsVisible(true);
+		const timer = setTimeout(() => {
+			setIsVisible(true);
+		}, 0);
+		return () => clearTimeout(timer);
 	}, []);
 
 	const helpCategories = [
@@ -147,7 +150,7 @@ export default function HelpPage() {
 												{item.question}
 											</h3>
 											<ChevronDown
-												className={`w-5 h-5 text-[#9DC834] transition-transform flex-shrink-0 ml-4 ${
+												className={`w-5 h-5 text-[#9DC834] transition-transform shrink-0 ml-4 ${
 													expandedIndex === `${categoryIndex}-${itemIndex}`
 														? "rotate-180"
 														: ""

@@ -31,11 +31,11 @@ const roboto = Roboto({
 
 export default function LeadershipSection() {
 	return (
-		<section className="bg-[#fafafa] py-16 text-black">
+		<section className="bg-[#fafafa] py-10 text-black">
 			<div className="max-w-7xl mx-auto px-6">
 				{/* Heading */}
 				<h2
-					className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-10 ${instrument.className}`}
+					className={`text-3xl lg:text-4xl font-bold text-gray-900 text-center md:text-left mb-10 ${instrument.className}`}
 				>
 					Leadership
 				</h2>
@@ -43,7 +43,7 @@ export default function LeadershipSection() {
 				{/* Layout */}
 				<div className="flex flex-col md:flex-row items-center md:items-start gap-10 bg-[rgba(248,248,248,1)]">
 					{/* Founder Image Card */}
-					<div className="bg-white rounded-xl shadow-sm overflow-hidden w-[22%] mx-auto md:mx-0 p-5">
+					<div className="bg-white rounded-xl shadow-sm overflow-hidden md:w-[22%] mx-auto md:mx-0 p-5">
 						<div className="relative ">
 							<Image
 								src={founderImg}
@@ -72,10 +72,10 @@ export default function LeadershipSection() {
 
 					<div className=" space-y-6 md:flex-1">
 						<div>
-							<h3 className={`text-2xl font-semibold mb-2 ${inter.className}`}>
+							<h3 className={`text-2xl font-semibold mb-2 text-center md:text-left ${inter.className}`}>
 								Our Founder
 							</h3>
-							<p className={`text-xl leading-relaxed font-normal`}>
+							<p className={`text-xl leading-relaxed font-normal text-center md:text-left`}>
 								<span
 									className={`${roboto.className} text-[rgba(49,55,61,0.8)]`}
 								>
@@ -109,10 +109,10 @@ export default function LeadershipSection() {
 						</div>
 
 						<div>
-							<h3 className="text-2xl font-semibold mb-2">
+							<h3 className="text-2xl font-semibold mb-2 text-center md:text-left">
 								Experienced Management Team
 							</h3>
-							<p className="text-xl leading-relaxed ">
+							<p className="text-xl leading-relaxed text-center md:text-left">
 								<span
 									className={`${roboto.className} text-[rgba(49,55,61,0.8)]`}
 								>

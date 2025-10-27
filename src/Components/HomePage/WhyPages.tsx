@@ -88,13 +88,13 @@ const WhySorichFoils: FC = () => {
 					))}
 				</div>
 
-				<div className="flex justify-center flex-wrap gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-cente">
 					{features.slice(3).map((feature, index) => (
 						<FeatureCard
 							feature={feature}
 							index={index + 3}
 							key={index + 3}
-							cardWidthClass="w-[26%]"
+							cardWidthClass="w-[80%] mx-auto md:w-[256px]"
 						/>
 					))}
 				</div>
