@@ -9,8 +9,10 @@ import img5 from "@/public/fifth.png"
 import img6 from "@/public/sixth.png"
 import img7 from "@/public/seventh.png"
 import img8 from "@/public/eigth.png"
+import bg from "@/public/bg3.png"
 import { Outfit } from "next/font/google";
 import user1 from "@/public/man.png"; 
+import RoundedActionButton from "../Common/Button"
 
 const outfit = Outfit({
     weight : ["700","400"],
@@ -70,8 +72,15 @@ const products = [
 const OurProducts = () => {
   return (
     <section className="w-full px-6 md:px-12 py-16 bg-white">
+        <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover -z-10"
+        /> 
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-8 mt-20">
         <h2 className={`text-3xl md:text-5xl font-bold mb-3 text-[#000000] ${outfit.className}`}>
           Our Products
         </h2>
@@ -117,12 +126,9 @@ const OurProducts = () => {
                   {p.desc}
                 </p>
               </div>
-              <button className={`mt-4 inline-flex items-center  text-sm font-medium text-[#000000] hover:text-black transition ${outfit.className}`}>
-                <span className="px-4 py-2 bg-gray-100 hover:bg-green-100 rounded-full flex items-center space-x-2">
-                  <span>Read More</span>
-                  <ArrowRight className="w-4 h-4 text-green-600" />
-                </span>
-              </button>
+              <div className={`mt-4 inline-flex items-center  text-sm font-medium text-[#000000] hover:text-black transition ${outfit.className}`}>
+                <RoundedActionButton text="Read More" textColor="text-black" borderColor="border-black"/>
+              </div>
             </div>
           </div>
         ))}
@@ -130,10 +136,9 @@ const OurProducts = () => {
 
       {/* View All Button */}
       <div className="flex justify-center mt-12">
-        <button className="flex items-center px-6 py-3 bg-gray-900 hover:bg-black text-white rounded-full transition">
-          <span>View All</span>
-          <ArrowRight className="w-5 h-5 ml-2 text-white" />
-        </button>
+        <div className="flex items-center px-6 py-3  text-white rounded-full transition">
+            <RoundedActionButton text="View More" textColor="text-black" borderColor="border-black"/>
+        </div>
       </div>
     </section>
   );

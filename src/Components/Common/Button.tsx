@@ -4,6 +4,7 @@ import Image from "next/image";
 import greenCircle from "@/public/Right Button.png"; 
 
 import { Outfit } from "next/font/google";
+import { FC } from "react";
 
 const outfit = Outfit({
     weight: ["500"],
@@ -11,10 +12,21 @@ const outfit = Outfit({
     display: "swap",
   });
 
-export default function RoundedActionButton({ text = "Contact Us" }) {
+interface RoundedActionButtonProps {
+  text?: string;
+  textColor?: string; 
+  borderColor?: string
+}
+
+const RoundedActionButton: FC<RoundedActionButtonProps> = ({ 
+    text = "Contact Us", 
+    textColor = "text-white",
+    borderColor = "border-white" // Default to white
+}) => {
   return (
     <button
-      className={`relative flex items-center justify-center border text-lg border-black rounded-full px-8 py-3  text-black  bg-white hover:shadow-md transition-all ${outfit.className}`}
+     
+      className={`relative flex items-center justify-center border text-lg ${borderColor} rounded-full px-8 py-2 ${textColor} hover:shadow-md transition-all ${outfit.className}`}
     >
       {/* Text */}
       <span className="z-10">{text}</span>
@@ -33,3 +45,5 @@ export default function RoundedActionButton({ text = "Contact Us" }) {
     </button>
   );
 }
+
+export default RoundedActionButton;

@@ -4,7 +4,7 @@ import Image from "next/image";
 import certIcon from "@/public/Medal.png";
 import { Instrument_Sans, Inter } from "next/font/google";
 import RoundedActionButton from "../Common/Button";
-
+import bg from "@/public/bg3.png";
 
 const instrument = Instrument_Sans({
     weight: ["600"],
@@ -42,7 +42,15 @@ const certificates = [
 
 const Certificates = () => {
   return (
-    <section className="flex flex-col items-center justify-center w-full bg-white text-black py-20 px-6 relative overflow-hidden">
+    <section className="flex flex-col items-center justify-center w-full bg-white text-black py-20 px-6 relative overflow-hidden lg:mt-20">
+      <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover -z-10"
+        /> 
+      
       {/* Subtle background pattern */}
       <div className="absolute inset-0  pointer-events-none" />
 

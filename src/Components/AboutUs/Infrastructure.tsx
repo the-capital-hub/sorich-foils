@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-
+import RoundedActionButton from "../Common/Button";
 import hslImg from "@/public/inst3.png";
 import rotogravureImg from "@/public/inst2.png";
 import slittingImg from "@/public/inst1.png";
+import bg from "@/public/bg3.png";
 
 import { Instrument_Sans } from "next/font/google";
 
@@ -54,7 +55,14 @@ export default function MachinerySection() {
   ];
 
   return (
-    <section className="relative py-20 bg-white">
+    <section className="relative py-20 bg-white lg:mt-20">
+        <Image
+          src={bg}
+          alt="Background"
+          fill
+          priority
+          className="object-cover -z-10"
+        /> 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <h2 className={`text-2xl md:text-3xl lg:text-5xl font-semibold text-center mb-16 ${instrument.className}`}>
           Infrastructure :: <span className="font-bold">Machinery</span>
@@ -81,12 +89,7 @@ export default function MachinerySection() {
           ))}
         </ul>
 
-        <button className="mt-4 flex items-center gap-2 border border-gray-300 hover:border-lime-600 text-sm px-4 py-2 rounded-full transition-all hover:shadow-sm">
-          Read More
-          <span className="bg-lime-600 text-white p-1 rounded-full">
-            <ArrowRight className="w-3 h-3" />
-          </span>
-        </button>
+        <RoundedActionButton text="Read More" textColor="text-black" borderColor="border-black"/>
       </div>
 
       {/* Image Section */}
@@ -109,12 +112,7 @@ export default function MachinerySection() {
 
 
         <div className="flex justify-center mt-16">
-          <button className="flex items-center gap-2 border border-gray-300 hover:border-lime-600 text-sm px-4 py-2 rounded-full transition-all hover:shadow-sm">
-            View All
-            <span className="bg-lime-600 text-white p-1 rounded-full">
-              <ArrowRight className="w-3 h-3" />
-            </span>
-          </button>
+        <RoundedActionButton text="View All" textColor="text-black" borderColor="border-black"/>
         </div>
       </div>
     </section>

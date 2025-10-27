@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, ReactNode } from "react"; // Import ReactNode
 import { Cpu, Gem, Lightbulb, ShieldCheck, FileCheck2 } from "lucide-react";
 
 import { Instrument_Sans, Outfit } from "next/font/google";
@@ -17,8 +17,17 @@ const instrument = Instrument_Sans({
     display: "swap",
   });
 
+
+interface Feature {
+  icon: ReactNode; 
+  title: string;
+  desc: string;
+}
+
+
 const WhySorichFoils: FC = () => {
-  const features = [
+
+  const features: Feature[] = [
     {
       icon: <Cpu className="w-19 h-19 text-[#9DC834] mb-4" />,
       title: "Cutting-Edge Technology",
@@ -46,25 +55,45 @@ const WhySorichFoils: FC = () => {
     },
   ];
 
+
+
+
+const FeatureCard: FC<{ feature: Feature; index: number; cardWidthClass: string }> = ({ feature, index, cardWidthClass }) => (
+  <div
+    key={index}
+    
+    className={`bg-white shadow-md rounded-2xl p-6 ${cardWidthClass} flex flex-col items-center text-center hover:shadow-lg justify-center transition-shadow duration-300 border-b-4 border-black`}
+  >
+    {feature.icon}
+    <h3 className={`text-3xl mb-2 font-medium ${outfit.className}`}>{feature.title}</h3>
+    <p className={`text-gray-600 text-sm font-normal ${outfit.className}`}>{feature.desc}</p>
+  </div>
+);
+
+
   return (
     <section className="py-16 bg-[#FEFFFA] text-center">
       <h2 className={`text-3xl lg:text-5xl  text-[rgba(17, 24, 39, 1)] mb-10 ${instrument.className}`}>
         Why Sorich Foils?
       </h2>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-  {features.map((feature, index) => (
-    <div
-      key={index}
-      className="bg-white shadow-md rounded-2xl p-6 w-[80%] max-w-sm flex flex-col items-center text-center hover:shadow-lg justify-center transition-shadow duration-300 border-b-4 border-black"
-    >
-      {feature.icon}
-      <h3 className={`text-3xl mb-2 font-medium ${outfit.className}`}>{feature.title}</h3>
-      <p className={`text-gray-600 text-sm font-normal ${outfit.className}`}>{feature.desc}</p>
+      <div className="max-w-5xl mx-auto flex flex-col gap-8">
+    
+   
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+        {features.slice(0, 3).map((feature, index) => (
+            <FeatureCard feature={feature} index={index} key={index} cardWidthClass="w-[80%]" />
+        ))}
     </div>
-  ))}
-</div>
 
+    
+    <div className="flex justify-center flex-wrap gap-8">
+        {features.slice(3).map((feature, index) => (
+             <FeatureCard feature={feature} index={index + 3} key={index + 3} cardWidthClass="w-[26%]" />
+        ))}
+    </div>
+
+</div>
     </section>
   );
 };

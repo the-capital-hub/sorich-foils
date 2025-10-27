@@ -54,7 +54,7 @@ const WeGrow = () => {
 
       <div className="flex flex-wrap justify-center gap-8 mt-12 w-full">
         {logos.map((logo, index) => (
-          <div key={index} className="relative w-60">
+          <div key={index} className="relative w-52">
             <Image
               src={logo}
               alt={`Client Logo ${index + 1}`}
