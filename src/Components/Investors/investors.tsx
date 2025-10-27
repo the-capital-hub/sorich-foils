@@ -153,13 +153,11 @@ const Investors = () => {
 					</div>
 
 					{/* Submit Button */}
-					<div className="pt-4 inline-flex items-center gap-2 px-6 py-2 rounded-full text-gray-900 transition">
-						<RoundedActionButton
-							text="Send Request"
-							textColor="text-black"
-							borderColor="border-black"
-						/>
-					</div>
+					<RoundedActionButton
+						text="Send Request"
+						textColor="text-black"
+						borderColor="border-black"
+					/>
 				</form>
 			</div>
 		</section>

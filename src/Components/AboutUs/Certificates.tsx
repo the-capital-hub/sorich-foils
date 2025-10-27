@@ -64,7 +64,7 @@ const Certificates = () => {
 				{certificates.map((cert) => (
 					<div
 						key={cert.id}
-						className="bg-white rounded-3xl border-b-8 pt-8 pb-2 w-[390px] text-center flex flex-col items-center justify-between hover:shadow-[6px_6px_0px_#00000030] transition-shadow"
+						className="bg-white rounded-3xl border-b-8 py-10 w-[390px] text-center flex flex-col items-center justify-between"
 					>
 						{/* Icon */}
 						<Image
@@ -94,7 +94,7 @@ const Certificates = () => {
 			</div>
 
 			<div className="flex flex-row justify-items-center lg:mt-10">
-				<div className="bg-white rounded-3xl border-b-8 black pt-8 pb-2 w-full text-center flex flex-col items-center justify-between hover:shadow-[6px_6px_0px_#00000030] transition-shadow">
+				<div className="bg-white rounded-3xl border-b-8 black py-10 w-full text-center flex flex-col items-center justify-between">
 					{/* Icon */}
 					<Image
 						src={certIcon}
@@ -125,3 +125,5 @@ const Certificates = () => {
 };
 
 export default Certificates;
+
+//  hover:shadow-[6px_6px_0px_#00000030] transition-shadow
