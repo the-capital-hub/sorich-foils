@@ -1,13 +1,11 @@
-import MachinerySection from "@/src/Components/AboutUs/Infrastructure"
-
-  
+import MachinerySection from "@/src/Components/AboutUs/Infrastructure";
 
 const infraStructure = () => {
-    return(
-        <div>
-            <MachinerySection/>
-        </div>
-    )
-}
+	return (
+		<>
+			<MachinerySection />
+		</>
+	);
+};
 
 export default infraStructure;

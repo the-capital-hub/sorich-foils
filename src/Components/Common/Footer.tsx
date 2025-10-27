@@ -1,7 +1,11 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import { Inter, Roboto, Raleway } from "next/font/google";
+import logo from "@/public/logo.png";
 
 const inter = Inter({
 	weight: ["500"],
@@ -43,9 +47,10 @@ const Footer = () => {
 				<div className="flex flex-col md:flex-row justify-between gap-10">
 					{/* Left */}
 					<div className="flex flex-col gap-3 md:w-1/2">
-						<div className="w-10 h-10 flex items-center justify-center bg-linear-to-b from-[#00FF85] to-[#00B86B] rounded-full">
-							<Mail className="text-black w-5 h-5" />
+						<div className="w-14 h-14 flex items-center justify-center bg-linear-to-b from-[#00B512] to-black rounded-full">
+							<Mail className="text-white w-7 h-7" />
 						</div>
+
 						<h2 className={`text-6xl font-semibold ${roboto.className} mt-10`}>
 							Keep up with the latest
 						</h2>
@@ -72,12 +77,15 @@ const Footer = () => {
 							</button>
 						</div>
 						<p
-							className={`text-xs text-gray-500 mt-2 ${roboto.className} lg:mt-4`}
+							className={`text-xs text-[#9E9E9E] mt-2 ${roboto.className} lg:mt-4`}
 						>
 							By subscribing you agree to our{" "}
-							<span className="underline cursor-pointer text-[#FFFFFF]">
+							<Link
+								href="/privacy-policy"
+								className="underline cursor-pointer text-[#FFFFFF]"
+							>
 								Privacy Policy
-							</span>
+							</Link>
 							.
 						</p>
 					</div>
@@ -89,114 +97,185 @@ const Footer = () => {
 				<div className="flex flex-col md:flex-row justify-between">
 					{/* Logo & tagline */}
 					<div className="flex flex-col gap-4">
-						<h3 className={`text-2xl ${raleway.className}`}>Logo</h3>
-						<p className={`text-sm text-gray-500 ${roboto.className}`}>
-							Make your complicated
+						<motion.div
+							initial={{ opacity: 0, y: -10 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.1, duration: 0.3 }}
+							whileHover={{ y: -2 }}
+							whileTap={{ scale: 0.95 }}
+						>
+							<Image
+								src={logo}
+								alt="whymedia logo"
+								width={170}
+								className="w-24 md:w-44"
+							/>
+						</motion.div>
+						<p className={`text-sm text-[#9E9E9E] ${roboto.className}`}>
+							Building Trust Through Innovation
 						</p>
 					</div>
 
 					{/* Links */}
-					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-1 text-sm text-gray-400">
-						<div className="lg:ml-6">
-							<p className={`text-white text-sm mb-6 ${inter.className}`}>
-								Logo
-							</p>
-							<ul className="space-y-4">
-								<li>Payment</li>
-								<li>Card</li>
-								<li>Pricing</li>
-							</ul>
-						</div>
-
+					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-sm text-gray-400">
 						<div>
 							<p className={`text-white text-sm mb-6 ${inter.className}`}>
-								Products
+								Navigation
 							</p>
-							<ul className="space-y-4">
-								<li>Personal</li>
-								<li>Business</li>
-								<li>Invoices</li>
+							<ul className="space-y-4 text-[#9E9E9E]">
+								<li>
+									<Link href="/" className="hover:text-white transition-colors">
+										Home
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/product"
+										className="hover:text-white transition-colors"
+									>
+										Products
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/investor"
+										className="hover:text-white transition-colors"
+									>
+										Investors
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/blog"
+										className="hover:text-white transition-colors"
+									>
+										Blogs
+									</Link>
+								</li>
 							</ul>
 						</div>
 
+						{/* Company */}
 						<div>
 							<p className={`text-white text-sm mb-6 ${inter.className}`}>
 								Company
 							</p>
-							<ul className="space-y-4">
-								<li>About</li>
-								<li>Careers</li>
-								<li>Press Kit</li>
+							<ul className="space-y-4 text-[#9E9E9E]">
+								<li>
+									<Link
+										href="/milestone"
+										className="hover:text-white transition-colors"
+									>
+										Milestones
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/infra"
+										className="hover:text-white transition-colors"
+									>
+										Infrastructure
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/certificate"
+										className="hover:text-white transition-colors"
+									>
+										Certificates
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/about"
+										className="hover:text-white transition-colors"
+									>
+										About Us
+									</Link>
+								</li>
 							</ul>
 						</div>
 
-						<div className="lg:-ml-6">
-							<p className={`text-white text-sm mb-6 ${inter.className}`}>
-								Developer
-							</p>
-							<ul className="space-y-4">
-								<li>API Documentation</li>
-								<li>Guide</li>
-								<li>Change Log</li>
-							</ul>
-						</div>
-
-						<div>
-							<p className={`text-white text-sm mb-6 ${inter.className}`}>
-								Community
-							</p>
-							<ul className="space-y-4">
-								<li>Refer a Friend</li>
-								<li>Gift</li>
-							</ul>
-						</div>
-
+						{/* Support */}
 						<div>
 							<p className={`text-white text-sm mb-6 ${inter.className}`}>
 								Support
 							</p>
-							<ul className="space-y-4">
-								<li>Help</li>
-								<li>FAQ</li>
-								<li>Contact</li>
+							<ul className="space-y-4 text-[#9E9E9E]">
+								<li>
+									<Link
+										href="/help"
+										className="hover:text-white transition-colors"
+									>
+										Help
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/faq"
+										className="hover:text-white transition-colors"
+									>
+										FAQ
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/contact"
+										className="hover:text-white transition-colors"
+									>
+										Contact
+									</Link>
+								</li>
 							</ul>
 						</div>
 
+						{/* Legal */}
 						<div>
 							<p className={`text-white text-sm mb-6 ${inter.className}`}>
 								Legal
 							</p>
-							<ul className="space-y-4">
-								<li>Privacy Policy</li>
-								<li>Terms of Services</li>
-								<li>Cookies</li>
+							<ul className="space-y-4 text-[#9E9E9E]">
+								<li>
+									<Link
+										href="/privacy-policy"
+										className="hover:text-white transition-colors"
+									>
+										Privacy Policy
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/terms-of-service"
+										className="hover:text-white transition-colors"
+									>
+										Terms of Services
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
-				<hr className="border-gray-800 my-5" />
 			</div>
 
 			<div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm gap-5 mt-10">
 				{/* Left Side: Copyright */}
 				<div>
-					<p>© 2023 Finzo. All Right Reserved</p>
+					<p>© 2025 Sorich Foils Limited. All Right Reserved</p>
 				</div>
 
 				{/* Right Side: Social Icons */}
 				<div className="flex gap-2">
-					<div className="bg-white rounded-full p-2">
-						<Youtube className="text-black w-4 h-4" />
+					<div className="text-white bg-black rounded-full p-2">
+						<Youtube className="w-4 h-4" />
 					</div>
-					<div className="bg-white rounded-full p-2">
-						<Facebook className="text-black w-4 h-4" />
+					<div className="text-white bg-black rounded-full p-2">
+						<Facebook className="w-4 h-4" />
 					</div>
-					<div className="bg-white rounded-full p-2">
-						<Twitter className="text-black w-4 h-4" />
+					<div className="text-white bg-black rounded-full p-2">
+						<Twitter className="w-4 h-4" />
 					</div>
-					<div className="bg-white rounded-full p-2">
-						<Linkedin className="text-black w-4 h-4" />
+					<div className="text-white bg-black rounded-full p-2">
+						<Linkedin className="w-4 h-4" />
 					</div>
 				</div>
 			</div>

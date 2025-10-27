@@ -39,9 +39,12 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
 		{ name: "Certificates", href: "/certificate" },
 	];
 
-	const isAboutSection = ["/about", "/infra", "/milestone", "/certificate"].some((prefix) =>
-		pathname.startsWith(prefix)
-	);
+	const isAboutSection = [
+		"/about",
+		"/infra",
+		"/milestone",
+		"/certificate",
+	].some((prefix) => pathname.startsWith(prefix));
 
 	const hoverText = isDark ? "hover:text-[#9DC834]" : "hover:text-[#9DC834]";
 	const textColor = pathname === "/" ? "text-white" : "text-black";
@@ -174,12 +177,13 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
 						whileTap={{ scale: 0.95 }}
 					>
 						{pathname === "/" ? (
-							<RoundedActionButton />
+							<RoundedActionButton url="/contact" />
 						) : (
 							<RoundedActionButton
 								text="Contact Us"
 								textColor="text-black"
 								borderColor="border-black"
+								url="/contact"
 							/>
 						)}
 					</motion.div>
