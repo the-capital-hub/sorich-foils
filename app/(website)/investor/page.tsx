@@ -1,13 +1,11 @@
-import Investors from "@/src/Components/Investors/investors"
-
+import Investors from "@/src/Components/Investors/investors";
 
 const Investor = () => {
-    return(
-        <div>
-            <Investors/>
-        </div>
-    )
-}
-
+	return (
+		<>
+			<Investors />
+		</>
+	);
+};
 
 export default Investor;

@@ -1,12 +1,11 @@
-import BlogSection from "@/src/Components/Blogs/Blogs"
-
+import BlogSection from "@/src/Components/Blogs/Blogs";
 
 const Blog = () => {
-    return(
-        <div>
-          <BlogSection/>  
-        </div>
-    )
-}
+	return (
+		<>
+			<BlogSection />
+		</>
+	);
+};
 
 export default Blog;

@@ -1,12 +1,11 @@
-import Certificates from "@/src/Components/AboutUs/Certificates"
-
+import Certificates from "@/src/Components/AboutUs/Certificates";
 
 const certificate = () => {
-    return(
-        <div>
-            <Certificates/>
-        </div>
-    )
-}
+	return (
+		<>
+			<Certificates />
+		</>
+	);
+};
 
-export default certificate
+export default certificate;

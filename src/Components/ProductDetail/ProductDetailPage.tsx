@@ -6,7 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import Banner from "@/public/productDetail/Banner.svg";
 import Product from "@/public/productDetail/Product.svg";
 import circularBg from "@/public/circularBg.svg";
-import Footer from "../Common/Footer";
 
 const features = [
 	{
@@ -200,9 +199,6 @@ export default function ProductDetailsPage() {
 					</div>
 				</div>
 			</section>
-
-			{/* Footer */}
-			<Footer />
 		</div>
 	);
 }
