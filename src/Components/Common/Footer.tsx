@@ -144,6 +144,14 @@ const Footer = () => {
 										Investors
 									</Link>
 								</li>
+								<li>
+									<Link
+										href="/careers"
+										className="hover:text-white transition-colors"
+									>
+										Careers
+									</Link>
+								</li>
 								{/* <li>
 									<Link
 										href="/blog"
@@ -163,7 +171,7 @@ const Footer = () => {
 							<ul className="space-y-4 text-[#9E9E9E]">
 								<li>
 									<Link
-										href="/milestone"
+										href="/resources/milestone"
 										className="hover:text-white transition-colors"
 									>
 										Milestones
@@ -171,7 +179,7 @@ const Footer = () => {
 								</li>
 								<li>
 									<Link
-										href="/infra"
+										href="/resources/infra"
 										className="hover:text-white transition-colors"
 									>
 										Infrastructure
@@ -179,10 +187,18 @@ const Footer = () => {
 								</li>
 								<li>
 									<Link
-										href="/certificate"
+										href="/resources/certificate"
 										className="hover:text-white transition-colors"
 									>
 										Certificates
+									</Link>
+								</li>
+								<li>
+									<Link
+										href="/resources/patent"
+										className="hover:text-white transition-colors"
+									>
+										Patents
 									</Link>
 								</li>
 								<li>
