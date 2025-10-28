@@ -56,8 +56,10 @@ const HeroSection = () => {
 				<p
 					className={`text-xl md:text-base text-[#FFFFFF] max-w-2xl leading-relaxed ${inter.className} mb-12`}
 				>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Sorich Foils is a leading manufacturer and supplier of aluminium foils
+					and laminates for pharmaceutical packaging. With a focus on safety,
+					reliability, and performance, our products are designed to meet the
+					stringent requirements of the healthcare industry.
 				</p>
 
 				{/* Button */}

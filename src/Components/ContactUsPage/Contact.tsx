@@ -1,6 +1,13 @@
 "use client";
 
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import {
+	Facebook,
+	Instagram,
+	Twitter,
+	Mail,
+	Linkedin,
+	Youtube,
+} from "lucide-react";
 import Link from "next/link";
 import { Manrope, Outfit, Inter } from "next/font/google";
 import bg from "@/public/bg3.png";
@@ -48,23 +55,34 @@ export default function ContactSection() {
 
 					{/* Right Side: Social Icons (Now Static) */}
 					<div className="flex md:flex-col gap-3 mt-6 md:mt-8 justify-end max-w-5xl lg:mr-20">
+						{/* <Link href="mailto:K7s2d@example.com" className="text-white">
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110">
+							<Youtube className="w-4 h-4" />
+						</div>
+					</Link>
+
+					<Link href="mailto:K7s2d@example.com" className="text-white">
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110">
+							<Facebook className="w-4 h-4" />
+						</div>
+					</Link> */}
+
 						<Link
-							href="#"
-							className="w-9 h-9 flex items-center justify-center bg-white border rounded-full shadow hover:bg-gray-100 transition"
+							href="https://x.com/SorichL52560?t=7l86KjFsHeWD3smSGSrzPA&s=08"
+							className="text-white"
 						>
-							<Facebook className="text-black w-4 h-4" />
+							<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110 ">
+								<Twitter className="w-4 h-4" />
+							</div>
 						</Link>
+
 						<Link
-							href="#"
-							className="w-9 h-9 flex items-center justify-center bg-white border rounded-full shadow hover:bg-gray-100 transition"
+							href="https://www.linkedin.com/company/sorich-foils-ltd/"
+							className="text-white"
 						>
-							<Instagram className="text-black w-4 h-4" />
-						</Link>
-						<Link
-							href="#"
-							className="w-9 h-9 flex items-center justify-center bg-white border rounded-full shadow hover:bg-gray-100 transition"
-						>
-							<Twitter className="text-black w-4 h-4" />
+							<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110 ">
+								<Linkedin className="w-4 h-4" />
+							</div>
 						</Link>
 					</div>
 				</div>
@@ -180,7 +198,7 @@ export default function ContactSection() {
 							<li>Vikhil.kotian@sorichfoils.in</li>
 							<li>ceo@sorichfoils.in</li>
 							<li>manohar@sorichfoils.in</li>
-							<li>sradhhasorichfoils@gmail.com</li>
+							<li>sradhasorichfoils@gmail.com</li>
 						</ul>
 					</div>
 				</div>

@@ -38,8 +38,10 @@ const Investors = () => {
 					<p
 						className={`text-white/90 max-w-4xl text-base md:text-xl ${inter.className} font-semibold`}
 					>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						At Sorich Foils Limited, we build trust through innovation and
+						integrity. Our commitment to quality and sustainable growth drives
+						long-term value for our investors and stakeholders. Together, we
+						create opportunities that inspire progress.
 					</p>
 				</div>
 			</div>
