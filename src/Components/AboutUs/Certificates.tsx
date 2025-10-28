@@ -23,21 +23,24 @@ const certificates = [
 		id: 1,
 		title: "1. ISO 9001:2015",
 		subtitle: "Certifying Agency: BSCIC, Haryana, India",
-		link: "#",
+		link: "/Certificates/ISO.pdf",
 	},
 	{
 		id: 2,
 		title: "2. ISO GMP 15378:2017",
 		subtitle: "Certifying Agency: BSCIC, Haryana, India",
-		link: "#",
+		link: "/Certificates/GMP.pdf",
 	},
 	{
 		id: 3,
 		title: "3. DMF (Drug Master File)",
 		subtitle: "Issued by: FDA, USA",
-		link: "#",
+		link: "/Certificates/DMF.pdf",
 	},
 ];
+
+// And for the fourth certificate
+const pdfUrl = "/Certificates/IVM-US-EN.pdf";
 
 const Certificates = () => {
 	return (
@@ -88,6 +91,8 @@ const Certificates = () => {
 							text="Open"
 							textColor="text-black"
 							borderColor="border-black"
+							pdfUrl={cert.link}
+							openInNewTab={true}
 						/>
 					</div>
 				))}
@@ -117,6 +122,8 @@ const Certificates = () => {
 						text="Open"
 						textColor="text-black"
 						borderColor="border-black"
+						pdfUrl={pdfUrl}
+						openInNewTab={true}
 					/>
 				</div>
 			</div>
@@ -125,5 +132,3 @@ const Certificates = () => {
 };
 
 export default Certificates;
-
-//  hover:shadow-[6px_6px_0px_#00000030] transition-shadow

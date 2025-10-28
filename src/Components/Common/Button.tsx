@@ -17,6 +17,8 @@ interface RoundedActionButtonProps {
 	textColor?: string;
 	borderColor?: string;
 	url?: string;
+	pdfUrl?: string; // Add PDF URL prop
+	openInNewTab?: boolean; // Optional: control new tab behavior
 }
 
 const RoundedActionButton: FC<RoundedActionButtonProps> = ({
@@ -24,11 +26,24 @@ const RoundedActionButton: FC<RoundedActionButtonProps> = ({
 	textColor = "text-white",
 	borderColor = "border-white",
 	url = "/",
+	pdfUrl,
+	openInNewTab = false,
 }) => {
 	const router = useRouter();
 
 	const handleClick = () => {
-		router.push(url);
+		// If PDF URL is provided, open it in a new tab
+		if (pdfUrl) {
+			window.open(pdfUrl, "_blank", "noopener,noreferrer");
+		}
+		// If openInNewTab is true, open URL in new tab
+		else if (openInNewTab) {
+			window.open(url, "_blank", "noopener,noreferrer");
+		}
+		// Otherwise, use Next.js router for navigation
+		else {
+			router.push(url);
+		}
 	};
 
 	return (

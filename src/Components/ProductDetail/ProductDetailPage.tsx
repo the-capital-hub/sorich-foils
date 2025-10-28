@@ -1,51 +1,56 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import Banner from "@/public/productDetail/Banner.svg";
-import Product from "@/public/productDetail/Product.svg";
 import circularBg from "@/public/circularBg.svg";
+import Products from "@/constant/Products.js";
 
-const features = [
-	{
-		id: 1,
-		title: "Soft-tempered",
-		description:
-			"Soft-tempered aluminum foil (30-40 microns) laminated with LDPE film for high-moisture-sensitive tablets and capsules.",
-	},
-	{
-		id: 2,
-		title: "No thermoformed",
-		description:
-			"No thermoformed or cold-formed cavities; the strip forms around the product during sealing.",
-	},
-	{
-		id: 3,
-		title: "Excellent protection",
-		description:
-			"Provides excellent protection against moisture, light, and oxygen.",
-	},
-	{
-		id: 4,
-		title: "Continuous form-fill-seal",
-		description:
-			"Continuous form-fill-seal process ensures consistent quality and efficiency.",
-	},
-	{
-		id: 5,
-		title: "Trusted globally",
-		description:
-			"Trusted globally in pharmaceutical and other industrial applications.",
-	},
-];
+interface Product {
+	_id: string;
+	title: string;
+	subtitle: string;
+	img: any;
+	bannerImg: any;
+	detailImg: any;
+	desc: string;
+	aboutSection: {
+		heading: string;
+		paragraphs: string[];
+	};
+	keyFeatures: {
+		_id: string;
+		title: string;
+		description: string;
+	}[];
+}
 
 export default function ProductDetailsPage() {
+	const params = useParams();
+	const router = useRouter();
+	const productId = params?.id as string;
+
+	const [product, setProduct] = useState<Product | null>(null);
 	const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
 	const featuresRef = useRef<HTMLDivElement>(null);
-	const [isHovered, setIsHovered] = useState(false);
 
 	useEffect(() => {
+		// Find product by ID
+		const foundProduct = Products.find((p) => p._id === productId);
+
+		if (foundProduct) {
+			setProduct(foundProduct as Product);
+		} else {
+			// Redirect to 404 or products page if product not found
+			console.error("Product not found");
+			// router.push('/404'); // Uncomment if you have a 404 page
+		}
+	}, [productId]);
+
+	useEffect(() => {
+		if (!product) return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -64,10 +69,22 @@ export default function ProductDetailsPage() {
 		featureElements.forEach((el) => observer.observe(el));
 
 		return () => observer.disconnect();
-	}, []);
+	}, [product]);
+
+	// Loading state
+	if (!product) {
+		return (
+			<div className="min-h-screen bg-white flex items-center justify-center">
+				<div className="text-center">
+					<div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900 mx-auto"></div>
+					<p className="mt-4 text-gray-600">Loading product details...</p>
+				</div>
+			</div>
+		);
+	}
 
 	return (
-		<div className="min-h-screen bg-white relative text-black">
+		<div className="min-h-screen bg-white relative text-black pt-10">
 			{/* Background SVGs */}
 			<Image
 				src={circularBg}
@@ -82,9 +99,11 @@ export default function ProductDetailsPage() {
 				<div className="max-w-6xl mx-auto">
 					{/* Title and Subtitle */}
 					<div className="text-center mb-12 animate-fade-in">
-						<h1 className="text-4xl sm:text-6xl font-bold mb-4">Strip Pack</h1>
+						<h1 className="text-4xl sm:text-6xl font-bold mb-4">
+							{product.title}
+						</h1>
 						<p className="text-2xl sm:text-3xl font-semibold">
-							Efficient, Precise, and Protective Packaging Solution
+							{product.subtitle}
 						</p>
 					</div>
 
@@ -95,8 +114,8 @@ export default function ProductDetailsPage() {
 					>
 						<div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
 							<Image
-								src={Banner.src}
-								alt="Strip Pack Product"
+								src={product.bannerImg}
+								alt={`${product.title} Banner`}
 								fill
 								className="object-cover"
 							/>
@@ -106,11 +125,9 @@ export default function ProductDetailsPage() {
 					{/* Contact Button */}
 					<div className="w-fit mx-auto flex items-center -space-x-3">
 						<button className="h-10 text-sm font-semibold text-gray-900 hover:text-gray-700 border border-gray-800 rounded-full px-4 py-2 transition-colors">
-							Read More
+							Contact Us
 						</button>
-						<div
-							className={`w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-md cursor-pointer`}
-						>
+						<div className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-md cursor-pointer">
 							<ArrowUpRight size={18} className="text-gray-900" />
 						</div>
 					</div>
@@ -121,41 +138,28 @@ export default function ProductDetailsPage() {
 			<section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative z-10">
 				<div className="max-w-6xl mx-auto">
 					<h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
-						About Strip Pack
+						About {product.title}
 					</h2>
 
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						{/* Left Content */}
 						<div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
 							<h3 className="text-2xl font-bold mb-6">
-								We manufacture and supply
+								{product.aboutSection.heading}
 							</h3>
-							<p className="leading-relaxed mb-4">
-								Strip packaging is widely used in the pharmaceutical,
-								confectionery, engineering, and industrial sectors. Designed for
-								high-speed precision strip packaging machines that handle up to
-								2,400 units per minute.
-							</p>
-							<p className="leading-relaxed mb-4">
-								Products use a stainless steel feeding system into sealing
-								roller cavities, where laminated foils pack and seal them in a
-								continuous area. The strip then passes through vertical and
-								horizontal gutter assemblies to deliver packages in the desired
-								sizes.
-							</p>
-							<p className="leading-relaxed">
-								Furthermore, strip packaging machines are designed to meet
-								stringent industry standards, ensuring product safety and
-								compliance with regulatory requirements.
-							</p>
+							{product.aboutSection.paragraphs.map((paragraph, index) => (
+								<p key={index} className="leading-relaxed mb-4">
+									{paragraph}
+								</p>
+							))}
 						</div>
 
 						{/* Right Image */}
 						<div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
 							<div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg">
 								<Image
-									src={Product.src}
-									alt="Strip Pack Manufacturing"
+									src={product.detailImg}
+									alt={`${product.title} Details`}
 									fill
 									className="object-cover"
 								/>
@@ -173,9 +177,9 @@ export default function ProductDetailsPage() {
 					</h2>
 
 					<div ref={featuresRef} className="space-y-6">
-						{features.map((feature, index) => (
+						{product.keyFeatures.map((feature, index) => (
 							<div
-								key={feature.id}
+								key={feature._id}
 								data-feature
 								data-index={index}
 								className={`flex gap-6 p-6 bg-gray-100 rounded-3xl transition-all duration-500 transform ${
@@ -185,8 +189,9 @@ export default function ProductDetailsPage() {
 								}`}
 							>
 								{/* Icon */}
-								<div className="flex items-center justify-center rounded-lg font-bold text-7xl bg-linear-to-b from-lime-600 to-white bg-clip-text text-transparent">
-									{feature.id}
+								<div className="flex items-center justify-center rounded-lg font-bold text-7xl bg-gradient-to-b from-lime-600 to-white bg-clip-text text-transparent">
+									{/* {feature._id} */}
+									{index + 1}
 								</div>
 
 								{/* Content */}
