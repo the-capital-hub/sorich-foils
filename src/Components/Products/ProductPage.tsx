@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import bg from "@/public/bg3.png";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { Outfit } from "next/font/google";
 import { motion } from "framer-motion";
 import Products from "@/constant/Products.js";
@@ -71,7 +71,7 @@ const OurProducts = () => {
 							whileHover={{ scale: 1 }}
 						>
 							<div className="w-12 h-12 rounded-full bg-lime-400 flex items-center justify-center group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 cursor-pointer">
-								<ArrowUpRight
+								<ArrowUp
 									size={20}
 									className={`text-gray-900 transition-transform duration-300 ${
 										showAll ? "rotate-180" : ""
