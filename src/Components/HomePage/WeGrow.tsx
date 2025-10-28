@@ -36,7 +36,7 @@ const logos = [
 
 const WeGrow = () => {
   return (
-    <section className="flex flex-col items-center justify-center bg-white py-16 px-6">
+    <section className="flex flex-col items-center justify-center bg-white py-10 px-6">
       <h1
         className={`text-center text-5xl font-bold text-[#000000] ${instrument.className}`}
       >
@@ -54,7 +54,7 @@ const WeGrow = () => {
 
       <div className="flex flex-wrap justify-center gap-8 mt-12 w-full">
         {logos.map((logo, index) => (
-          <div key={index} className="relative w-52">
+          <div key={index} className="relative md:w-52">
             <Image
               src={logo}
               alt={`Client Logo ${index + 1}`}
