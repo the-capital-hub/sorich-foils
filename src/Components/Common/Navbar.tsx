@@ -50,23 +50,22 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
   // 	"/patents",
   // ].some((prefix) => pathname.startsWith(prefix));
 
-  // ✅ Check if current route is in Resources section
+ 
   const isResourcesSection = pathname.startsWith("/resources");
 
   // ✅ Automatically redirect `/resources` → `/resources/infra`
-  useEffect(() => {
-    if (pathname === "/resources") {
-      router.replace("/resources/infra");
-    }
-  }, [pathname, router]);
+//   useEffect(() => {
+//     if (pathname === "/resources") {
+//       router.replace("/resources/infra");
+//     }
+//   }, [pathname, router]);
 
   const hoverText = isDark ? "hover:text-[#9DC834]" : "hover:text-[#9DC834]";
   const textColor = pathname === "/" ? "text-white" : "text-black";
   const activeTextColor = isDark ? "text-[#9DC834]" : "text-white";
 
-  // The color for the sub-nav links, which should always be readable
-  // and distinct from the background they sit over.
-  const subNavTextColor = "text-black"; // Default to black for readability over any potential second nav background
+ 
+  const subNavTextColor = "text-black"; 
   const subNavActiveColor = "text-[#9DC834]";
 
   // const handleSearchMouseEnter = () => {
