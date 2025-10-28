@@ -24,7 +24,7 @@ export default function MilestoneCard({ milestone }: MilestoneCardProps) {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<div className="bg-lime-100 border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-black shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+			<div className="bg-lime-100 border border-gray-800 rounded-3xl p-6 shadow-black shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
 				{/* Year and Title */}
 				<div className="mb-4">
 					<h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">
@@ -33,7 +33,7 @@ export default function MilestoneCard({ milestone }: MilestoneCardProps) {
 				</div>
 
 				{/* Description */}
-				<p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6">
+				<p className="text-sm  text-gray-700 leading-relaxed mb-6">
 					{milestone.description}
 				</p>
 
@@ -55,8 +55,8 @@ export default function MilestoneCard({ milestone }: MilestoneCardProps) {
 					style={{
 						[milestone.side === "left" ? "right" : "left"]: "-48px",
 						width: "48px",
-						backgroundImage:
-							"repeating-linear-gradient(to right, #a3e635 0px, #a3e635 8px, transparent 8px, transparent 16px)",
+						// backgroundImage:
+						// 	"repeating-linear-gradient(to right, #a3e635 0px, #a3e635 8px, transparent 8px, transparent 16px)",
 					}}
 				/>
 			</div>
