@@ -41,7 +41,7 @@ export default function RootLayout({
       >
        <Navbar /> 
         
-        <main className="bg-white">
+        <main className="">
           {children}
         </main>
         
