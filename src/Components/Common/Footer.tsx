@@ -33,7 +33,7 @@ const robot = Roboto({
 
 const Footer = () => {
 	return (
-		<footer className="w-full bg-white text-black flex flex-col items-center justify-center p-10">
+		<footer className="w-full bg-white text-black flex flex-col relative z-20 items-center justify-center p-10">
 			{/* Top Heading */}
 			<h1
 				className={`text-4xl md:text-8xl font-semibold text-center mb-10 ${inter.className}`}
