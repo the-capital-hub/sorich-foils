@@ -144,14 +144,14 @@ const Footer = () => {
 										Investors
 									</Link>
 								</li>
-								<li>
+								{/* <li>
 									<Link
 										href="/blog"
 										className="hover:text-white transition-colors"
 									>
 										Blogs
 									</Link>
-								</li>
+								</li> */}
 							</ul>
 						</div>
 
@@ -265,18 +265,35 @@ const Footer = () => {
 
 				{/* Right Side: Social Icons */}
 				<div className="flex gap-2">
-					<div className="text-white bg-black rounded-full p-2">
-						<Youtube className="w-4 h-4" />
-					</div>
-					<div className="text-white bg-black rounded-full p-2">
-						<Facebook className="w-4 h-4" />
-					</div>
-					<div className="text-white bg-black rounded-full p-2">
-						<Twitter className="w-4 h-4" />
-					</div>
-					<div className="text-white bg-black rounded-full p-2">
-						<Linkedin className="w-4 h-4" />
-					</div>
+					{/* <Link href="mailto:K7s2d@example.com" className="text-white">
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110">
+							<Youtube className="w-4 h-4" />
+						</div>
+					</Link>
+
+					<Link href="mailto:K7s2d@example.com" className="text-white">
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110">
+							<Facebook className="w-4 h-4" />
+						</div>
+					</Link> */}
+
+					<Link
+						href="https://x.com/SorichL52560?t=7l86KjFsHeWD3smSGSrzPA&s=08"
+						className="text-white"
+					>
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110 ">
+							<Twitter className="w-4 h-4" />
+						</div>
+					</Link>
+
+					<Link
+						href="https://www.linkedin.com/company/sorich-foils-ltd/"
+						className="text-white"
+					>
+						<div className="text-white bg-black rounded-full p-2 cursor-pointer hover:scale-110 ">
+							<Linkedin className="w-4 h-4" />
+						</div>
+					</Link>
 				</div>
 			</div>
 		</footer>
