@@ -7,7 +7,7 @@ import bg from "@/public/bg3.png"
 import building from "@/public/about.png"
 import founder from "@/public/founder.png"
 import company from "@/public/group2.png"
-import { Eye, Telescope } from "lucide-react"
+import { Check, Eye, Handshake, Lightbulb, Telescope } from "lucide-react"
 
 const instrument = Instrument_Sans({
   weight: ["600", "400"],
@@ -100,7 +100,7 @@ const AboutUs = () => {
       </div>
 
       {/* ---------- Vision & Mission Section ---------- */}
-      <div className="w-full flex justify-center mt-4 md:mt-20 px-6 lg:mb-5">
+      <div  className="w-full flex justify-center mt-4 md:mt-20 px-6 lg:mb-5">
         <div className="max-w-7xl w-full bg-white rounded-[20px] p-8 lg:p-12 shadow-sm border border-gray-200">
           <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${instrument.className} text-[#1A1A1A]`}>
             Our Vision & Mission
@@ -108,7 +108,7 @@ const AboutUs = () => {
 
           <div className="grid md:grid-cols-2 gap-10">
             {/* Vision Card */}
-            <div className="bg-gradient-to-br from-[#F8F8F8] to-[#F0F0F0] rounded-3xl p-8 border-b-4 border-black">
+            <div id="vision" className="bg-gradient-to-br from-[#F8F8F8] to-[#F0F0F0] rounded-3xl p-8 border-b-4 border-black">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                  <Telescope/>
@@ -122,7 +122,7 @@ const AboutUs = () => {
             </div>
 
             {/* Mission Card */}
-            <div className="bg-gradient-to-br from-[#F8F8F8] to-[#F0F0F0] rounded-[20px] p-8 border-b-4 border-black">
+            <div id="mission" className="bg-gradient-to-br from-[#F8F8F8] to-[#F0F0F0] rounded-[20px] p-8 border-b-4 border-black">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-lime-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
            <Eye/>
@@ -134,6 +134,71 @@ const AboutUs = () => {
                 and sustainability, delivering unmatched quality, value, and lasting impact to our customers and
                 stakeholders worldwide.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+	   {/* ---------- Quality & Commitment Section ---------- */}
+      <div id="quality" className="w-full flex justify-center mt-4 md:mt-20 px-6 lg:mb-20">
+        <div className="max-w-7xl w-full bg-white rounded-[20px] p-8 lg:p-12 shadow-sm border border-gray-200">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center underline ${instrument.className} text-lime-500`}>
+            Quality & Commitment
+          </h2>
+
+          <p
+            className={`text-[#31373D] text-lg leading-relaxed text-center mb-8 max-w-4xl mx-auto ${instrument.className} font-normal`}
+          >
+            At Sorich, our unwavering commitment is to meet and exceed the needs and expectations of quality-conscious
+            customers.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* Left Column */}
+            <div>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                Our aim is to build long-lasting partnerships founded on mutual trust, business understanding, and
+                strong collaboration. We take pride in delivering solutions that are reliable, innovative, and tailored
+                to customer requirements.
+              </p>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                To support this vision, Sorich also has associated business units that provide essential inputs such as
+                electronically engraved cylinders, 3-layer / 5-layer LDPE film, extrusion coating, and PVC calendaring.
+              </p>
+            </div>
+
+            {/* Right Column */}
+            <div>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                Every process is carried out with precision, keeping quality at the forefront, so that customers
+                experience not just products, but a promise of consistency and excellence.
+              </p>
+              <p className={`text-[#31373D] text-lg leading-relaxed ${instrument.className} font-normal`}>
+                Our goal is not only to serve but to create enduring value for all our business partners. We remain
+                committed to excellence in everything we do, ensuring that every interaction with Sorich reflects our
+                dedication to quality and innovation.
+              </p>
+            </div>
+          </div>
+
+          {/* Icon Pills */}
+          <div className="flex flex-wrap justify-center gap-4 mt-12">
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+               <Check/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>Reliability</span>
+            </div>
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+              <Lightbulb/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>Innovation</span>
+            </div>
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+                <Handshake/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>Partnership</span>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import productImg from "@/public/machinne.png";
 import roundImage from "@/public/roundImage.png";
 import growthImg from "@/public/inclined.png";
@@ -28,6 +29,22 @@ const outfit = Outfit({
 });
 
 export default function AboutSection() {
+	const [expanded, setExpanded] = useState(false);
+
+	const fullText = `
+Our products are highly valued for their excellent barrier properties, including moisture and chemical resistance,
+water vapor protection, and durability. They serve a wide range of industries such as Pharmaceuticals, FMCG,
+Food & Dairy, Confectionery & Chocolate, and Personal Care packaging. We leverage advanced acid copolymers
+such as Surlyn and Nucryl to deliver exceptional strength, sealability, and barrier performance. This ensures our
+packaging solutions not only preserve product efficacy but also meet global pharmaceutical standards. These features
+ensure that our clients receive packaging solutions that protect, preserve, and enhance the value of their products.
+`;
+
+	const shortText = `
+Our products are highly valued for their excellent barrier properties and durability, serving industries such as
+Pharmaceuticals, FMCG, and Food & Dairy packaging.
+`;
+
 	return (
 		<section className="w-full bg-white text-gray-800 flex flex-col items-center px-6 md:px-10 lg:px-20 py-16">
 			{/* Heading */}
@@ -60,7 +77,7 @@ export default function AboutSection() {
 					{/* Left side - Heading */}
 					<div className="w-full md:w-1/2">
 						<h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-center md:text-left mb-4">
-							What We Do
+							Our Commitment
 						</h3>
 					</div>
 
@@ -117,6 +134,7 @@ export default function AboutSection() {
 							</div>
 						</div>
 
+						{/* Text Card with Read More */}
 						<div className="w-full md:w-2/3">
 							<div className="bg-white rounded-2xl shadow-md border-b-4 p-5 md:p-10">
 								<h5
@@ -124,20 +142,31 @@ export default function AboutSection() {
 								>
 									Superior Product Features
 								</h5>
-								<p
-									className={`text-base text-center md:text-left text-gray-600 ${outfit.className}`}
+
+								<AnimatePresence mode="wait">
+									<motion.p
+										key={expanded ? "full" : "short"}
+										initial={{ opacity: 0, height: 0 }}
+										animate={{ opacity: 1, height: "auto" }}
+										exit={{ opacity: 0, height: 0 }}
+										transition={{ duration: 0.4 }}
+										className={`text-base text-center md:text-left text-gray-600 ${outfit.className}`}
+									>
+										{expanded ? fullText : shortText}
+									</motion.p>
+								</AnimatePresence>
+
+								<button
+									onClick={() => setExpanded(!expanded)}
+									className="mt-3 text-blue-600 font-medium hover:underline block mx-auto md:mx-0"
 								>
-									Our products are highly valued for their excellent barrier properties, including moisture and chemical resistance,
- water vapor protection, and durability. They serve a wide range of industries such as Pharmaceuticals, FMCG,
- Food & Dairy, Confectionery & Chocolate, and Personal Care packaging. We leverage advanced acid copolymers
- such as Surlyn and Nucryl to deliver exceptional strength, sealability, and barrier performance. This ensures our
- packaging solutions not only preserve product efficacy but also meet global pharmaceutical standards. These features
- ensure that our clients receive packaging solutions that protect, preserve, and enhance the value of their products.
-								</p>
+									{expanded ? "Read Less" : "Read More"}
+								</button>
 							</div>
 						</div>
 					</div>
 
+					{/* Other Elements */}
 					<div className="flex gap-4 items-center max-w-3xl lg:ml-10">
 						<div className="w-3/5 relative rounded-2xl overflow-hidden shadow-md h-39">
 							<Image
@@ -160,18 +189,18 @@ export default function AboutSection() {
 						</div>
 					</div>
 
-					<div className="flex-1 bg-white rounded-2xl  border-b-8 black h-48 pt-8 pb-8 justify-items-center max-w-3xl md:ml-8">
+					<div className="flex-1 bg-white rounded-2xl border-b-8 black h-48 pt-8 pb-8 justify-items-center max-w-3xl md:ml-8">
 						<h5
-							className={`font-semibold mb-2  ${outfit.className} text-center text-3xl`}
+							className={`font-semibold mb-2 ${outfit.className} text-center text-3xl`}
 						>
 							State-of-the-Art Manufacturing Facility
 						</h5>
 						<p
-							className={`flex text-sm text-[#37393C] ${outfit.className} max-w-xl text-center`}
+							className={`flex text-sm text-[#37393C] ${outfit.className} max-w-xl text-center mx-auto`}
 						>
-							Our modern manufacturing facility is strategically located
-							at:Survey No. 175, Village Manda, Near A.B. Rolling Mills, Sarigam
-							– 396155, Gujarat, India.This location allows us to efficiently
+							Our modern manufacturing facility is strategically located at:
+							Survey No. 175, Village Manda, Near A.B. Rolling Mills, Sarigam –
+							396155, Gujarat, India. This location allows us to efficiently
 							manage production, logistics, and quality control while remaining
 							close to key industrial hubs.
 						</p>

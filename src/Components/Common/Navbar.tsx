@@ -27,13 +27,13 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
 
   const NavLinks = [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Products", href: "/product" },
     { name: "Investors", href: "/investor" },
     // { name: "Blogs", href: "/blog" },
     { name: "Resources", href: "/resources" },
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
-    { name: "About Us", href: "/about" },
   ];
 
   const SubNavLinks = [
@@ -43,15 +43,17 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
     { name: "Patents", href: "/resources/patent" },
   ];
 
-  // const isResourcesSection = [
-  // 	"/infra",
-  // 	"/milestone",
-  // 	"/certificate",
-  // 	"/patents",
-  // ].some((prefix) => pathname.startsWith(prefix));
 
- 
+  const SubNavLinksAbout = [
+    { name: "Our Vision", href: "/about#vision" },
+    { name: "Our Mission", href: "/about#mission" },
+    { name: "Quality & Commitment", href: "/about#quality" },
+    { name: "Safety for Team at Sorich", href: "/about#safety" },
+  ];
+
   const isResourcesSection = pathname.startsWith("/resources");
+  // 🟢 NEW: detect about page
+  const isAboutSection = pathname.startsWith("/about");
 
   // ✅ Automatically redirect `/resources` → `/resources/infra`
 //   useEffect(() => {
@@ -68,26 +70,6 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
   const subNavTextColor = "text-black"; 
   const subNavActiveColor = "text-[#9DC834]";
 
-  // const handleSearchMouseEnter = () => {
-  // 	setIsSearchOpen(true);
-  // 	if (closeTimeoutRef.current) {
-  // 		clearTimeout(closeTimeoutRef.current);
-  // 		closeTimeoutRef.current = null;
-  // 	}
-  // };
-
-  // const handleSearchMouseLeave = () => {
-  // 	if (searchValue === "") {
-  // 		closeTimeoutRef.current = setTimeout(() => {
-  // 			setIsSearchOpen(false);
-  // 		}, 1000);
-  // 	}
-  // };
-
-  // const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  // 	setSearchValue(e.target.value);
-  // };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -95,18 +77,6 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-
-  // useEffect(() => {
-  // 	if (searchValue === "" && isSearchOpen) {
-  // 		closeTimeoutRef.current = setTimeout(() => {
-  // 			setIsSearchOpen(false);
-  // 		}, 2000);
-  // 	}
-
-  // 	return () => {
-  // 		if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-  // 	};
-  // }, [searchValue, isSearchOpen]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -168,7 +138,8 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
                   href={link.href}
                   className={`transition-all duration-300 ease-in-out ${
                     // Special case: if we are in /about/*, highlight "About Us" in main nav
-                    isResourcesSection && link.href === "/resources"
+                    (isResourcesSection && link.href === "/resources") ||
+                    (isAboutSection && link.href === "/about")
                       ? `${activeTextColor} font-bold`
                       : pathname === link.href
                       ? `${activeTextColor} font-bold`
@@ -203,9 +174,9 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
         </div>
       </div>
 
-      {/* SECOND NAV LINE (Only for About Section) */}
+      {/* SECOND NAV LINE (For Resources & About Sections) */}
       <AnimatePresence>
-        {isResourcesSection && (
+        {(isResourcesSection || isAboutSection) && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -214,19 +185,21 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
             className="w-full lg:block hidden"
           >
             <div className="max-w-7xl mx-auto py-2 flex justify-center gap-10">
-              {SubNavLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-all duration-200 ${
-                    pathname === link.href
-                      ? `${subNavActiveColor} font-semibold border-b-2 border-[#9DC834]`
-                      : `${subNavTextColor} hover:border-b-2 hover:border-gray-400`
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {(isResourcesSection ? SubNavLinks : SubNavLinksAbout).map(
+                (link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-sm font-medium transition-all duration-200 ${
+                      pathname === link.href
+                        ? `${subNavActiveColor} font-semibold border-b-2 border-[#9DC834]`
+                        : `${subNavTextColor} hover:border-b-2 hover:border-gray-400`
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
           </motion.div>
         )}
@@ -284,7 +257,8 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
                     href={link.href}
                     onClick={closeMobileMenu}
                     className={`block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 ${
-                      isResourcesSection && link.href === "/resources"
+                      (isResourcesSection && link.href === "/resources") ||
+                      (isAboutSection && link.href === "/about")
                         ? `${activeTextColor} text-black text-xl font-bold`
                         : pathname === link.href
                         ? `${activeTextColor} text-black text-xl font-bold`
@@ -296,23 +270,25 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
                 </motion.div>
               ))}
 
-              {/* Mobile Sub-Navigation (Optional, you can add this here if needed) */}
-              {isResourcesSection && (
+              {/* Mobile Sub-Navigation (Optional, now also supports About) */}
+              {(isResourcesSection || isAboutSection) && (
                 <div className="pl-4 pt-2 border-t border-gray-300">
-                  {SubNavLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={closeMobileMenu}
-                      className={`block pl-4 py-2 text-sm ${
-                        pathname === link.href
-                          ? "font-bold text-[#9DC834]"
-                          : "text-gray-700 hover:text-gray-900"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                  {(isResourcesSection ? SubNavLinks : SubNavLinksAbout).map(
+                    (link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={closeMobileMenu}
+                        className={`block pl-4 py-2 text-sm ${
+                          pathname === link.href
+                            ? "font-bold text-[#9DC834]"
+                            : "text-gray-700 hover:text-gray-900"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )
+                  )}
                 </div>
               )}
             </div>
