@@ -2,17 +2,18 @@
 import { Instrument_Sans } from "next/font/google";
 import Image from "next/image";
 
-import logo1 from "@/public/SVG.png";
-import logo2 from "@/public/SVG-2.png";
-import logo3 from "@/public/SVG-3.png";
-import logo4 from "@/public/SVG-4.png";
-import logo5 from "@/public/SVG-5.png";
-import logo6 from "@/public/SVG-6.png";
-import logo7 from "@/public/SVG-7.png";
-import logo8 from "@/public/SVG-8.png";
-import logo9 from "@/public/SVG-9.png";
-import logo10 from "@/public/SVG-10.png";
-import logo11 from "@/public/SVG-11.png";
+import logo1 from '@/public/logos/renata.webp';
+import logo2 from "@/public/logos/Ind-Swift.png";
+import logo3 from "@/public/logos/OIP (1).webp";
+import logo4 from "@/public/logos/ajanta_pharma.png";
+import logo5 from "@/public/logos/alkem-logo.png";
+import logo6 from "@/public/logos/aristo.png";
+import logo7 from "@/public/logos/bristol-laboratories-logo.png";
+import logo8 from "@/public/logos/emami-group3970.jpg";
+import logo9 from "@/public/logos/incepta.png";
+import logo10 from "@/public/logos/indoco.png";
+import logo11 from "@/public/logos/npi-pharma.webp";
+import logo12 from "@/public/logos/OIP.webp";
 
 const instrument = Instrument_Sans({
   weight: ["700", "400"],
@@ -32,6 +33,7 @@ const logos = [
   logo9,
   logo10,
   logo11,
+  logo12,
 ];
 
 const WeGrow = () => {
