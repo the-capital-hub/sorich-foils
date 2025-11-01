@@ -127,10 +127,12 @@ export default function AboutSection() {
 								<p
 									className={`text-base text-center md:text-left text-gray-600 ${outfit.className}`}
 								>
-									Our products are highly valued for their excellent barrier
-									properties, including moisture and chemical resistance, water
-									vapor protection, and durability. They serve a wide range of
-									industries ..
+									Our products are highly valued for their excellent barrier properties, including moisture and chemical resistance,
+ water vapor protection, and durability. They serve a wide range of industries such as Pharmaceuticals, FMCG,
+ Food & Dairy, Confectionery & Chocolate, and Personal Care packaging. We leverage advanced acid copolymers
+ such as Surlyn and Nucryl to deliver exceptional strength, sealability, and barrier performance. This ensures our
+ packaging solutions not only preserve product efficacy but also meet global pharmaceutical standards. These features
+ ensure that our clients receive packaging solutions that protect, preserve, and enhance the value of their products.
 								</p>
 							</div>
 						</div>
