@@ -20,7 +20,7 @@ const milestones: Milestone[] = [
     year: "2011-12",
     title: "Inception and Strong Foundation",
     description:
-      "The company was incorporated in FY 2011–12 and achieved an impressive turnover of around ₹10 Crores in its very first year of operations. Despite limited resources and infrastructure, Sorich successfully catered to the food packaging industry, laying a strong foundation for future growth.",
+" The company was incorporated in FY 2011–12 and achieved an impressive turnover of around ₹10 Crores in its very first year of operations. Despite limited resources and infrastructure, Sorich successfully catered to the food packaging industry, laying a strong foundation for future growth. This early success reflected the company’s commitment to quality, customer satisfaction, and operational efficiency. The year marked the beginning of Sorich’s journey as an emerging player in the packaging sector, driven by innovation, determination, and a clear vision for sustainable growth.",
     side: "left",
   },
   {
@@ -28,8 +28,9 @@ const milestones: Milestone[] = [
     year: "2013-14",
     title: "Entry into Pharma Packaging Segment",
     description:
-      "In FY 2013–14, the company diversified its product portfolio by venturing into the pharmaceutical packaging segment, marking a major step in its growth journey. During this period, Sorich secured substantial orders from leading pharmaceuticaL....",
-    side: "right",
+" In FY 2013–14, the company diversified its product portfolio by venturing into the pharmaceutical packaging segment, marking a major step in its growth journey. During this period, Sorich secured substantial orders from leading pharmaceutical companies such as Ajanta Pharma Limited and Zydus Pharmaceutical Limited, establishing its credibility as a reliable and quality-driven supplier. With a turnover of ₹22.83 Crores, the year reflected significant progress and growing trust among reputed industry players. This strategic expansion not only strengthened the company’s market presence but also reinforced its commitment to delivering innovative, safe, and high-performance packaging solutions tailored to the stringent requirements of the pharma industry."  ,
+
+side: "right",
   },
   {
     id: 3,
@@ -44,7 +45,7 @@ const milestones: Milestone[] = [
     year: "2017-18",
     title: "Introduction of Sustainable Products",
     description:
-      "Launched a new line of sustainable and eco-friendly products, offering 100% biodegradable alternatives to single-use plastics under the brand name ECORICH. This initiative marked a significant step towards environmental responsibility and innovation in packaging solutions.",
+      " Launched a new line of sustainable and eco-friendly products, offering 100% biodegradable alternatives to single-use plastics under the brand name ECORICH. This initiative marked a significant step towards environmental responsibility and innovation in packaging solutions. The ECORICH range is designed to decompose naturally without harming the ecosystem, addressing one of the most pressing global challenges — plastic pollution. By introducing these products, the company reinforced its commitment to sustainability, circular economy principles, and green manufacturing practices. This milestone reflects Sorich’s vision to blend technological advancement with environmental consciousness, paving the way for a future where performance, quality, and sustainability go hand in han ",
     side: "left",
   },
   {
@@ -52,7 +53,7 @@ const milestones: Milestone[] = [
     year: "2024-25",
     title: "Global Expansion and Excellence",
     description:
-      "Recorded an impressive turnover of ₹45 Crores, reflecting consistent growth and strong business fundamentals. The year marked a significant milestone in Sorich’s journey towards global recognition, with exports expanding to regions such as Oman, Egypt, South America, North America, and Bangladesh, accounting for nearly 40% of the total turnover.",
+      "Recorded an impressive turnover of ₹45 Crores, reflecting consistent growth and strong business fundamentals. The year marked a significant milestone in Sorich’s journey towards global recognition, with exports expanding to regions such as Oman, Egypt, South America, North America, and Bangladesh, accounting for nearly 40% of the total turnover. This achievement underscores Sorich’s rising global footprint, robust operational capabilities, and unwavering focus on quality and innovation. Strengthened by long-term relationships with international clients and partners, the company continues to deliver world-class solutions while maintaining sustainability and excellence at its core. The company also proudly holds two registered patents, highlighting its commitment to technological advancement and product innovation”.",
     side: "right",
   },
 ];
@@ -95,7 +96,7 @@ export default function MilestonesPage() {
   return (
     <div
       ref={containerRef}
-      className="relative bg-white max-w-7xl mx-auto min-h-[310vh] pt-20 overflow-x-hidden"
+      className="relative bg-white max-w-7xl mx-auto min-h-[400vh] pt-20 overflow-x-hidden"
     >
       <Image
         src={circularBg}
@@ -115,7 +116,7 @@ export default function MilestonesPage() {
       {/* Scroll Hint Section */}
       <motion.div
         style={{ opacity: scrollHintOpacity }}
-        className="fixed inset-x-0 bottom-16 flex flex-col items-center z-50"
+        className="fixed inset-x-0 -bottom-10 flex flex-col items-center z-50"
       >
         {/* Decorative SVG (subtle curve/arrow) */}
         {/* <motion.svg
@@ -142,7 +143,7 @@ export default function MilestonesPage() {
           />
         </motion.svg> */}
 
-        <p className="text-gray-600 text-sm font-medium mt-2 mb-2">
+        <p className="text-gray-600 text-sm font-medium mt-5 mb-2">
           Scroll to explore
         </p>
 
@@ -171,8 +172,8 @@ export default function MilestonesPage() {
         <div className="absolute left-1/5 pointer-events-none">
           <div className="absolute">
             <svg
-              width="1009"
-              height="1650"
+              width="1209"
+              height="2050"
               viewBox="0 0 1009 1680"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

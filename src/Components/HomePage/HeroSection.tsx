@@ -67,7 +67,11 @@ const HeroSection = () => {
 				</p>
 
 				{/* Button */}
-				<RoundedActionButton url="/contact" />
+				<RoundedActionButton
+				onClick={()=>{
+				window.location.href='/contact';
+				}}
+				/>
 
 			</div>
 		</section>
