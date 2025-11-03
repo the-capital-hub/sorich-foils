@@ -29,9 +29,10 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/product" },
-    { name: "Investors", href: "/investor" },
-    // { name: "Blogs", href: "/blog" },
     { name: "Resources", href: "/resources" },
+    { name: "Investors", href: "/investor" },
+    {name:"Our Pioneering Brand", href:"/our-pioneering-brand"},
+    // { name: "Blogs", href: "/blog" },
     { name: "Careers", href: "/careers" },
     { name: "Contact Us", href: "/contact" },
   ];

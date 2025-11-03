@@ -204,6 +204,65 @@ const AboutUs = () => {
         </div>
       </div>
 
+ {/* ---------- Safety Section ---------- */}
+      <div id="safety" className="w-full flex justify-center mt-4 md:mt-20 px-6 lg:mb-5">
+        <div className="max-w-7xl w-full bg-white rounded-[20px] p-8 lg:p-12 shadow-sm border border-gray-200">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-center underline ${instrument.className} text-lime-500`}>
+            Safety for Team at Sorich
+          </h2>
+
+          <p
+            className={`text-[#31373D] text-lg leading-relaxed text-center mb-8 max-w-4xl mx-auto ${instrument.className} font-normal`}
+          >
+            At Sorich, safety is not just a requirement—it is our top priority. From the very design stage of our plant, we have ensured that every aspect is built with safety at its core.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* Left Column */}
+            <div>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                Our facility is designed to meet the highest safety standards, making it a secure environment for producing packaging materials used in food applications, personal care products, electronic industries applications, and pharmaceutical applications.
+              </p>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                We believe that protecting our people is paramount. Every process, equipment, and workspace is designed with comprehensive safety measures to prevent accidents and ensure the well-being of our team members.
+              </p>
+            </div>
+
+            {/* Right Column */}
+            <div>
+              <p className={`text-[#31373D] text-lg leading-relaxed mb-6 ${instrument.className} font-normal`}>
+                Our commitment extends beyond just infrastructure. We maintain rigorous safety protocols, regular training programs, and a culture where every team member is empowered to prioritize safety in their daily operations.
+              </p>
+              <p className={`text-[#31373D] text-lg leading-relaxed ${instrument.className} font-normal`}>
+                Whether it concerns our people, our products, or our reputation, safety remains at the heart of everything we do at Sorich. We continuously invest in safety improvements to create an environment where our team can work confidently and securely.
+              </p>
+            </div>
+          </div>
+
+          {/* Safety Focus Areas */}
+          <div className="flex flex-wrap justify-center gap-4 mt-12">
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+                <Check/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>People Safety</span>
+            </div>
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+                <Check/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>Product Safety</span>
+            </div>
+            <div className="flex items-center gap-3 bg-[#F8F8F8] rounded-full px-6 py-3 border border-gray-200">
+              <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center text-white">
+                <Check/>
+              </div>
+              <span className={`text-[#1A1A1A] font-semibold ${instrument.className}`}>Facility Standards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ---------- Company Section ---------- */}
       <div className="w-full flex justify-center mt-4 md:mt-20 px-6 lg:mb-20">
         <div className="max-w-7xl w-full bg-[#F0F0F0] rounded-[20px] p-8 lg:p-12 items-center gap-10 shadow-sm border border-gray-200">
