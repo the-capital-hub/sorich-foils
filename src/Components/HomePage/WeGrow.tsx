@@ -46,13 +46,15 @@ const WeGrow = () => {
       </h1>
 
       <p
-        className={`${instrument.className} font-normal text-center text-[#000000] text-xl mt-8 max-w-5xl`}
+        className={`${instrument.className} font-normal text-center text-[#000000] text-xl mt-12 max-w-5xl`}
       >
         Established brand demonstrating consistent growth, expanding product
         lines and inventory, driving global exports, securing a patented
         innovative packaging solution, and delivering unmatched value through
         quality and innovation.
       </p>
+
+      <p className={`${instrument.className} text-neutral-900 my-8 text-2xl font-semibold`}>A Glimpse of Our Trusted Allies</p>
 
       <div className="flex flex-wrap justify-center gap-10 mt-12 w-full max-w-6xl">
         {logos.map((logo, index) => (
