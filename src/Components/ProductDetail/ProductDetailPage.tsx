@@ -124,7 +124,11 @@ export default function ProductDetailsPage() {
 
 					{/* Contact Button */}
 					<div className="w-fit mx-auto flex items-center -space-x-3">
-						<button className="h-10 text-sm font-semibold text-gray-900 hover:text-gray-700 border border-gray-800 rounded-full px-4 py-2 transition-colors">
+						<button
+						onClick={()=> {
+							window.location.href = "/contact"
+						}}
+						className="h-10 text-sm font-semibold text-gray-900 hover:text-gray-700 border border-gray-800 rounded-full px-4 py-2 transition-colors">
 							Contact Us
 						</button>
 						<div className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-md cursor-pointer">

@@ -1,14 +1,27 @@
-import img1 from "@/public/first.png";
-import img2 from "@/public/second.png";
+import img1 from "@/public/productDetail/Strip-Packaging-3.jpg";
+import img2 from "@/public/productDetail/Blister1.webp";
 import img3 from "@/public/third.png";
-import img4 from "@/public/fourth.png";
-import img5 from "@/public/fifth.png";
-import img6 from "@/public/sixth.png";
-import img7 from "@/public/seventh.png";
-import img8 from "@/public/eigth.png";
+import img4 from "@/public/productDetail/lid1.jpg";
+import img5 from "@/public/productDetail/confectionary.png";
+import img6 from "@/public/productDetail/Extrusion.png";
+import img7 from "@/public/productDetail/holo1.jpg";
+import img8 from "@/public/productDetail/paperband2.jpg";
+import img9 from "@/public/productDetail/MonoCarton.png";
+import img10 from "@/public/productDetail/PharmaCartoning.png";
 
-import banner1 from "@/public/productDetail/Banner.svg";
+import banner1 from "@/public/productDetail/banner1.webp";
+import banner2 from "@/public/productDetail/Blister2.webp";
+import banner4 from "@/public/productDetail/lidbanner.png";
+import banner5 from "@/public/fifth.png";
+import banner6 from "@/public/sixth.png";
+import banner7 from "@/public/productDetail/holobanner.png";
+import banner8 from "@/public/productDetail/paperband.jpg";
+import banner9 from "@/public/productDetail/MonoCarton.png";
 import detailImg1 from "@/public/productDetail/Product.svg";
+import detailImg4 from "@/public/productDetail/lid2.jpg";
+import detailImg7 from "@/public/productDetail/holo2.png";
+import detailImg8 from "@/public/productDetail/Paperbandtype.png";
+import detailImg9 from "@/public/productDetail/MonoCarton.png";
 
 const products = [
   // 1. Strip Pack
@@ -18,7 +31,7 @@ const products = [
     subtitle: "Efficient, Precise, and Protective Packaging Solution",
     img: img1,
     bannerImg: banner1,
-    detailImg: detailImg1,
+    detailImg: img1,
     desc: "Strip packaging is widely used in the pharmaceutical, confectionery, engineering, and industrial sectors. Designed for high-speed precision, strip packaging machines can handle up to 2,400 units per minute.",
     aboutSection: {
       heading: "We manufacture and supply",
@@ -64,8 +77,8 @@ const products = [
     title: "Blister Pack",
     subtitle: "Pre-Formed Protection for Pharmaceutical Excellence",
     img: img2,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner2,
+    detailImg: img2,
     desc: "Blister packs are pre-formed packaging used for tablets and capsules, offering superior protection from humidity and contamination.",
     aboutSection: {
       heading: "Pharmaceutical-Grade Blister Packaging",
@@ -154,8 +167,8 @@ const products = [
     title: "Lid Aluminum Foil",
     subtitle: "Durable and Customizable Food Packaging",
     img: img4,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner4,
+    detailImg: detailImg4,
     desc: "Thin and lightweight foil lids ideal for disposable food containers, preserving freshness and preventing contamination.",
     aboutSection: {
       heading: "Food-Grade Aluminum Lid Foils",
@@ -198,8 +211,8 @@ const products = [
     title: "Confectionery Packaging",
     subtitle: "Protective, Versatile, and Eco-Friendly",
     img: img5,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner5,
+    detailImg: img5,
     desc: "Aluminum’s protective and recyclable nature makes it ideal for chocolates, candies, and confectionery products.",
     aboutSection: {
       heading: "Premium Confectionery Foils",
@@ -242,8 +255,8 @@ const products = [
     title: "Extrusion Laminates",
     subtitle: "Versatile, Durable, and High-Quality Laminates",
     img: img6,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner6,
+    detailImg: img6,
     desc: "Extrusion coating applies molten synthetic resin onto substrates like paper, foil, or films for durability and barrier strength.",
     aboutSection: {
       heading: "High-Performance Laminates",
@@ -288,8 +301,8 @@ const products = [
     title: "Holographic Products",
     subtitle: "Secure, High-Quality, and Versatile Foils",
     img: img7,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner7,
+    detailImg: detailImg7,
     desc: "Holographic hot stamping foils ensure authenticity and enhance product aesthetics across industries.",
     aboutSection: {
       heading: "High-Security Holographic Foils",
@@ -378,8 +391,8 @@ const products = [
     title: "Paper Bands For Currency",
     subtitle: "Secure, Durable, and Easy Handling",
     img: img8,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    bannerImg: banner8,
+    detailImg: detailImg8,
     desc: "Designed to bundle and secure currency notes, ensuring organized handling and easy identification.",
     aboutSection: {
       heading: "High-Strength Currency Paper Bands",
@@ -424,9 +437,9 @@ const products = [
     _id: "671fb91a6b8f4c1e24a9f10a",
     title: "Mono Cartons",
     subtitle: "Lightweight and Eco-Friendly Packaging",
-    img: img8,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    img: img9,
+    bannerImg: banner9,
+    detailImg: detailImg9,
     desc: "Single-layer cardboard cartons ideal for lightweight packaging of consumer goods, pharmaceuticals, and FMCG products.",
     aboutSection: {
       heading: "Customizable Mono Cartons",
@@ -470,9 +483,9 @@ const products = [
     _id: "671fb91a6b8f4c1e24a9f10b",
     title: "Pharma Cartoning",
     subtitle: "Precision and Safety in Pharmaceutical Packaging",
-    img: img8,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    img: img10,
+    bannerImg: img10,
+    detailImg: img10,
     desc: "Specialized cartons for pharmaceutical products that ensure safe storage, transport, and compliance with regulatory standards.",
     aboutSection: {
       heading: "Regulatory-Compliant Cartons",

@@ -225,7 +225,7 @@ export default function MilestonesPage() {
           </div>
 
           {/* Last 3 Milestones */}
-          <div className="flex flex-col items-center space-y-18 relative top-[37rem] right-10">
+          <div className="flex flex-col items-center space-y-18 relative top-[46rem] right-10">
             {lastThreeMilestones.map((milestone, i) => (
               <motion.div
                 key={milestone.id}

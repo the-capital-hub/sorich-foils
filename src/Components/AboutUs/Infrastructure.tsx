@@ -6,10 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import RoundedActionButton from "../Common/Button";
 import { Instrument_Sans } from "next/font/google";
 
-import hslImg from "@/public/inst3.png";
-import rotogravureImg from "@/public/inst2.png";
-import slittingImg from "@/public/inst1.png";
+
+import hslImg from "@/public/Machine-Images/Hsl-1000mm.jpg";
+// import rotogravureImg from "@/public/inst2.png";
+import onetwofourImg from "@/public/Machine-Images/onetwofour.jpg";
+import slittingImg from "@/public/Machine-Images/hs-slitting.jpg";
+import docotringImg from "@/public/Machine-Images/doctoringInspection.jpg";
+import ArcImg from "@/public/Machine-Images/Arc&web10.jpg";
+import sixcolorImg from "@/public/Machine-Images/colorfrontback.jpg";
 import bg from "@/public/bg3.png";
+
+import { MapPin, Building2,  HardHat, Wallpaper, Expand, LandPlot } from "lucide-react";
 
 const instrument = Instrument_Sans({
   weight: ["600", "400"],
@@ -18,6 +25,9 @@ const instrument = Instrument_Sans({
 });
 
 export default function MachinerySection() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
   const machines = [
     {
       id: 1,
@@ -59,7 +69,7 @@ export default function MachinerySection() {
       id: 3,
       title:
         "Ten Colour Rotogravure Printing Machines and Web Video with Auto Registration Controller",
-      image: rotogravureImg,
+      image: ArcImg,
       points: [
         "Maximum speed up to 200 meters per minute.",
         "Maximum web width up to 1000 mm.",
@@ -73,7 +83,7 @@ export default function MachinerySection() {
       id: 4,
       title:
         "One two + four colour combination printing machine for pharmaceutical primary packaging printing",
-      image: slittingImg,
+      image: onetwofourImg,
       points: [
         "Maximum speed up to 120 mtr/minutes.",
         "Maximum web width up to 500 mm.",
@@ -84,7 +94,7 @@ export default function MachinerySection() {
     {
       id: 5,
       title: "Six colour printing machine with front & back printing facility",
-      image: slittingImg,
+      image: sixcolorImg,
       points: [
         "Maximum speed up to 80 mtr/minutes.",
         "Maximum web width up to 800 mm.",
@@ -107,7 +117,7 @@ export default function MachinerySection() {
     {
       id: 7,
       title: "Doctoring / Inspection Machine",
-      image: slittingImg,
+      image: docotringImg,
       points: [
         "Maximum speed up to 100 mtr/minutes.",
         "Maximum web width up to 500 mm.",
@@ -115,9 +125,6 @@ export default function MachinerySection() {
       ],
     },
   ];
-
-  const [expanded, setExpanded] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
 
   const toggleExpand = (id: number) => {
     setExpanded(expanded === id ? null : id);
@@ -127,29 +134,103 @@ export default function MachinerySection() {
 
   return (
     <section className="relative pt-20 pb-10 bg-white text-black overflow-hidden">
-      <Image
-        src={bg}
-        alt="Background"
-        fill
-        priority
-        className="object-cover -z-10"
-      />
+      <Image src={bg} alt="Background" fill priority className="object-cover -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2
-          className={`text-2xl md:text-3xl lg:text-5xl font-semibold text-center mt-16 mb-10 ${instrument.className}`}
-        >
-          Infrastructure :: <span className="font-bold">Machinery</span>
-          <p className="font-semibold text-base mx-auto max-w-5xl md:max-w-4xl my-2 text-center">
-            Spread across about 2 acres, providing ample space for current
-            operations as well as future expansion requirements. Approximately
-            40,000 sq. ft. of well-planned construction, designed to accommodate
-            production units, storage, utilities, and administrative facilities
-            in a safe and efficient manner.
-          </p>
-        </h2>
 
-        {/* Machinery Cards */}
+        {/* ---------- LAND SECTION ---------- */}
+         {/* ---------- LAND SECTION ---------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white border-b-4 border-lime-400 rounded-3xl p-8 md:p-12 mb-7 mt-12 shadow-lg"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <div className="bg-white border-b-4 border-lime-400 rounded-full p-6 shadow-md">
+                <MapPin size={48} className="text-lime-400" />
+              </div>
+            </div>
+            <div className="flex-grow">
+              <h2 className={`text-3xl md:text-4xl font-bold text-neutral-900 mb-3 ${instrument.className}`}>
+                Land Infrastructure
+              </h2>
+              <p className={`text-neutral-800 text-lg leading-relaxed font-semibold ${instrument.className}`}>
+                Spread across about <span className="font-bold">2 acres</span>, providing ample space for current
+                operations as well as future expansion requirements.
+              </p>
+              <div className="mt-6 flex gap-4 flex-wrap">
+                <div className="bg-white border border-lime-400 bg-opacity-30 rounded-full px-4 py-2">
+                  <p className="text-neutral-600 font-semibold text-sm flex items-center gap-2">
+                    <LandPlot className="text-lime-400"/>
+                   2 Acres</p>
+                </div>
+               <div className="bg-white border border-lime-400 bg-opacity-30 rounded-full px-4 py-2">
+                  <p className="text-neutral-600 font-semibold text-sm flex items-center gap-2">
+                    <Expand className="text-lime-400"/>
+                    Expansion Ready.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ---------- BUILDING SECTION ---------- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-white border-b-4 border-lime-400 rounded-3xl p-8 md:p-12 mb-16  shadow-lg"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0 md:order-2">
+              <div className="bg-white border-b-4 border-lime-400 rounded-full p-6 shadow-md">
+                <Building2 size={48} className="text-lime-400" />
+              </div>
+            </div>
+            <div className="flex-grow md:order-1">
+              <h2 className={`text-3xl md:text-4xl font-bold text-neutral-900 mb-3 ${instrument.className}`}>
+                Building Infrastructure
+              </h2>
+              <p className={`text-neutral-700 text-lg leading-relaxed font-semibold ${instrument.className}`}>
+                Approximately <span className="font-bold">40,000 sq. ft.</span> of well-planned construction, designed
+                to accommodate production units, storage, utilities, and administrative facilities in a safe and
+                efficient manner.
+              </p>
+              <div className="mt-6 flex gap-4 flex-wrap">
+                <div className="bg-white border border-lime-400 bg-opacity-30 rounded-full px-4 py-2">
+                  <p className="text-neutral-600 font-semibold text-sm flex items-center gap-2">
+                    <Expand className="text-lime-400"/>
+                    40,000 sq. ft.</p>
+                </div>
+                <div className="bg-white border border-lime-400  bg-opacity-30 rounded-full px-4 py-2">
+                  <p className="text-neutral-600 font-semibold flex items-center gap-2 text-sm">
+                    <Wallpaper className="text-lime-400"/>
+                    Modern Design</p>
+                </div>
+                <div className="bg-white border border-lime-400  bg-opacity-30 rounded-full px-4 py-2">
+                  <p className="text-black font-semibold text-sm flex items-center gap-2">
+                    <HardHat className="text-lime-400"/>
+                    Safe & Efficient</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ---------- MACHINERY SECTION ---------- */}
+        <div className="text-center mt-20 mb-10">
+          <div className="flex justify-center items-center gap-2 mb-4">
+            <h2
+              className={`text-2xl md:text-3xl lg:text-5xl font-semibold ${instrument.className}`}
+            >
+              Infrastructure :: <span className="font-bold">Machinery</span>
+            </h2>
+          </div>
+        </div>
+
+        {/* ---------- MACHINERY CARDS ---------- */}
         <AnimatePresence>
           {visibleMachines.map((machine, index) => {
             const isExpanded = expanded === machine.id;
@@ -227,7 +308,10 @@ export default function MachinerySection() {
         </AnimatePresence>
 
         {/* View All / Show Less Button */}
-        <div className="flex justify-center mt-10" onClick={() => setShowAll(!showAll)}>
+        <div
+          className="flex justify-center mt-10"
+          onClick={() => setShowAll(!showAll)}
+        >
           <RoundedActionButton
             text={showAll ? "Show Less" : "View All"}
             textColor="text-black"
