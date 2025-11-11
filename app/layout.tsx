@@ -34,6 +34,10 @@ export default function RootLayout({
 					crossOrigin="anonymous"
 					referrerPolicy="no-referrer"
 				/>
+				<meta
+					httpEquiv="Content-Security-Policy"
+					content="upgrade-insecure-requests"
+				/>
 			</head>
 
       <body
