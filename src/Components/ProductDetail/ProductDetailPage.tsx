@@ -1,19 +1,17 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useParams, useRouter } from "next/navigation";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import circularBg from "@/public/circularBg.svg";
-import Products from "@/constant/Products.js";
 
-interface Product {
-	_id: string;
-	title: string;
-	subtitle: string;
-	img: any;
-	bannerImg: any;
-	detailImg: any;
+export interface Product {
+        _id: string;
+        title: string;
+        subtitle: string;
+        img: StaticImageData;
+        bannerImg: StaticImageData;
+        detailImg: StaticImageData;
 	desc: string;
 	aboutSection: {
 		heading: string;
@@ -23,38 +21,22 @@ interface Product {
 		_id: string;
 		title: string;
 		description: string;
-	}[];
+        }[];
 }
 
-export default function ProductDetailsPage() {
-	const params = useParams();
-	const router = useRouter();
-	const productId = params?.id as string;
+interface ProductDetailsPageProps {
+        product: Product;
+}
 
-	const [product, setProduct] = useState<Product | null>(null);
-	const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
-	const featuresRef = useRef<HTMLDivElement>(null);
+export default function ProductDetailsPage({ product }: ProductDetailsPageProps) {
+        const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
+        const featuresRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		// Find product by ID
-		const foundProduct = Products.find((p) => p._id === productId);
-
-		if (foundProduct) {
-			setProduct(foundProduct as Product);
-		} else {
-			// Redirect to 404 or products page if product not found
-			console.error("Product not found");
-			// router.push('/404'); // Uncomment if you have a 404 page
-		}
-	}, [productId]);
-
-	useEffect(() => {
-		if (!product) return;
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
+        useEffect(() => {
+                const observer = new IntersectionObserver(
+                        (entries) => {
+                                entries.forEach((entry) => {
+                                        if (entry.isIntersecting) {
 						const index = Number.parseInt(
 							entry.target.getAttribute("data-index") || "0"
 						);
@@ -68,24 +50,12 @@ export default function ProductDetailsPage() {
 		const featureElements = document.querySelectorAll("[data-feature]");
 		featureElements.forEach((el) => observer.observe(el));
 
-		return () => observer.disconnect();
-	}, [product]);
+                return () => observer.disconnect();
+        }, [product]);
 
-	// Loading state
-	if (!product) {
-		return (
-			<div className="min-h-screen bg-white flex items-center justify-center">
-				<div className="text-center">
-					<div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-900 mx-auto"></div>
-					<p className="mt-4 text-gray-600">Loading product details...</p>
-				</div>
-			</div>
-		);
-	}
-
-	return (
-		<div className="min-h-screen bg-white relative text-black pt-10">
-			{/* Background SVGs */}
+        return (
+                <div className="min-h-screen bg-white relative text-black pt-10">
+                        {/* Background SVGs */}
 			<Image
 				src={circularBg}
 				alt="Circular Background"
