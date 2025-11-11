@@ -47,7 +47,9 @@ const ProductCard = ({
 						text="Read More"
 						textColor="text-black"
 						borderColor="border-black"
-						url={`/product/${id}`}
+						onClick={() => {
+							window.location.href = `/product/${id}`;
+						}}
 					/>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 import { Instrument_Sans } from "next/font/google";
 import Image from "next/image";
 
-import logo1 from '@/public/logos/renata.webp';
+import logo1 from "@/public/logos/renata.webp";
 import logo2 from "@/public/logos/Ind-Swift.png";
 import logo3 from "@/public/logos/OIP (1).webp";
 import logo4 from "@/public/logos/ajanta_pharma.png";
@@ -46,7 +46,7 @@ const WeGrow = () => {
       </h1>
 
       <p
-        className={`${instrument.className} font-normal text-center text-[#000000] text-xl mt-8 max-w-5xl`}
+        className={`${instrument.className} font-normal text-center text-[#000000] text-xl mt-12 max-w-5xl`}
       >
         Established brand demonstrating consistent growth, expanding product
         lines and inventory, driving global exports, securing a patented
@@ -54,13 +54,20 @@ const WeGrow = () => {
         quality and innovation.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-8 mt-12 w-full">
+      <p className={`${instrument.className} text-neutral-900 my-8 text-2xl font-semibold`}>A Glimpse of Our Trusted Allies</p>
+
+      <div className="flex flex-wrap justify-center gap-10 mt-12 w-full max-w-6xl">
         {logos.map((logo, index) => (
-          <div key={index} className="relative md:w-52">
+          <div
+            key={index}
+            className="relative w-40 h-24 flex items-center justify-center p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
+          >
             <Image
               src={logo}
               alt={`Client Logo ${index + 1}`}
+              fill
               className="object-contain"
+              sizes="(max-width: 768px) 100px, 160px"
             />
           </div>
         ))}

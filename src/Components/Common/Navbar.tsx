@@ -29,7 +29,7 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/product" },
-    { name: "Resources", href: "/resources" },
+    { name: "Resources", href: "/resources/infra" },
     { name: "Investors", href: "/investor" },
     {name:"Our Pioneering Brand", href:"/our-pioneering-brand"},
     // { name: "Blogs", href: "/blog" },
