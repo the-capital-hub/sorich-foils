@@ -420,96 +420,96 @@ const products = [
   },
 
   // 10. Mono Cartons
-  {
-    _id: "671fb91a6b8f4c1e24a9f10a",
-    title: "Mono Cartons",
-    subtitle: "Lightweight and Eco-Friendly Packaging",
-    img: img8,
-    bannerImg: banner1,
-    detailImg: detailImg1,
-    desc: "Single-layer cardboard cartons ideal for lightweight packaging of consumer goods, pharmaceuticals, and FMCG products.",
-    aboutSection: {
-      heading: "Customizable Mono Cartons",
-      paragraphs: [
-        "Mono cartons are versatile packaging options for pharmaceuticals, FMCG, and retail sectors.",
-        "Printed with high-resolution graphics for enhanced product branding and consumer appeal.",
-        "Made from recyclable, high-strength paperboard to ensure protection during transport and handling.",
-      ],
-    },
-    keyFeatures: [
-      {
-        _id: "671fb91a6b8f4c1e24a9f201",
-        title: "Durable construction",
-        description: " Strong and durable construction",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f202",
-        title: "Custom printing",
-        description: "High-quality surface for printing and branding",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f203",
-        title: "Eco-friendly",
-        description: "Eco-friendly and recyclable",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f204",
-        title: "Lightweight",
-        description: "Lightweight yet protective",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f205",
-        title: "Protective finish",
-        description: "Provides resistance against scratches and moisture.",
-      },
-    ],
-  },
+  // {
+  //   _id: "671fb91a6b8f4c1e24a9f10a",
+  //   title: "Mono Cartons",
+  //   subtitle: "Lightweight and Eco-Friendly Packaging",
+  //   img: img8,
+  //   bannerImg: banner1,
+  //   detailImg: detailImg1,
+  //   desc: "Single-layer cardboard cartons ideal for lightweight packaging of consumer goods, pharmaceuticals, and FMCG products.",
+  //   aboutSection: {
+  //     heading: "Customizable Mono Cartons",
+  //     paragraphs: [
+  //       "Mono cartons are versatile packaging options for pharmaceuticals, FMCG, and retail sectors.",
+  //       "Printed with high-resolution graphics for enhanced product branding and consumer appeal.",
+  //       "Made from recyclable, high-strength paperboard to ensure protection during transport and handling.",
+  //     ],
+  //   },
+  //   keyFeatures: [
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f201",
+  //       title: "Durable construction",
+  //       description: " Strong and durable construction",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f202",
+  //       title: "Custom printing",
+  //       description: "High-quality surface for printing and branding",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f203",
+  //       title: "Eco-friendly",
+  //       description: "Eco-friendly and recyclable",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f204",
+  //       title: "Lightweight",
+  //       description: "Lightweight yet protective",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f205",
+  //       title: "Protective finish",
+  //       description: "Provides resistance against scratches and moisture.",
+  //     },
+  //   ],
+  // },
 
   // 11. Pharma Cartoning
-  {
-    _id: "671fb91a6b8f4c1e24a9f10b",
-    title: "Pharma Cartoning",
-    subtitle: "Precision and Safety in Pharmaceutical Packaging",
-    img: img8,
-    bannerImg: banner1,
-    detailImg: detailImg1,
-    desc: "Specialized cartons for pharmaceutical products that ensure safe storage, transport, and compliance with regulatory standards.",
-    aboutSection: {
-      heading: "Regulatory-Compliant Cartons",
-      paragraphs: [
-        "Pharma cartons are designed for safety, precision, and traceability in medication packaging.",
-        "Features tamper-evident closures and high-quality print areas for batch coding and labeling.",
-        "Manufactured to comply with international pharmaceutical standards for patient safety and reliability.",
-      ],
-    },
-    keyFeatures: [
-      {
-        _id: "671fb91a6b8f4c1e24a9f211",
-        title: "Precision folding",
-        description: "Precision folding for secure packaging",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f212",
-        title: "Tamper evident",
-        description: "Tamper-evident design for product safety.",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f213",
-        title: "Batch printing",
-        description: "High-quality printing for batch and expiry details",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f214",
-        title: "Regulatory approved",
-        description: "Compliant with pharmaceutical packaging standards",
-      },
-      {
-        _id: "671fb91a6b8f4c1e24a9f215",
-        title: "Strong structure",
-        description: "Protects delicate pharma items during shipment.",
-      },
-    ],
-  },
+  // {
+  //   _id: "671fb91a6b8f4c1e24a9f10b",
+  //   title: "Pharma Cartoning",
+  //   subtitle: "Precision and Safety in Pharmaceutical Packaging",
+  //   img: img8,
+  //   bannerImg: banner1,
+  //   detailImg: detailImg1,
+  //   desc: "Specialized cartons for pharmaceutical products that ensure safe storage, transport, and compliance with regulatory standards.",
+  //   aboutSection: {
+  //     heading: "Regulatory-Compliant Cartons",
+  //     paragraphs: [
+  //       "Pharma cartons are designed for safety, precision, and traceability in medication packaging.",
+  //       "Features tamper-evident closures and high-quality print areas for batch coding and labeling.",
+  //       "Manufactured to comply with international pharmaceutical standards for patient safety and reliability.",
+  //     ],
+  //   },
+  //   keyFeatures: [
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f211",
+  //       title: "Precision folding",
+  //       description: "Precision folding for secure packaging",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f212",
+  //       title: "Tamper evident",
+  //       description: "Tamper-evident design for product safety.",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f213",
+  //       title: "Batch printing",
+  //       description: "High-quality printing for batch and expiry details",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f214",
+  //       title: "Regulatory approved",
+  //       description: "Compliant with pharmaceutical packaging standards",
+  //     },
+  //     {
+  //       _id: "671fb91a6b8f4c1e24a9f215",
+  //       title: "Strong structure",
+  //       description: "Protects delicate pharma items during shipment.",
+  //     },
+  //   ],
+  // },
 
   // 12. Self-Adhesive Labels
   {
@@ -569,6 +569,7 @@ const products = [
     aboutSection: {
       heading: "Advanced Copolymer Technology",
       paragraphs: [
+        "The products are contraceptive packaging and low-temperature sealable laminates for heat-sensitive medicines, including liquid and jelly packaging.",
         "Surlyn and Nucryl copolymers offer exceptional sealing, clarity, and impact strength.",
         "Used for pharmaceutical, specialty, and premium food packaging where durability is key.",
         "Provides outstanding resistance to moisture, chemicals, and temperature variations.",
