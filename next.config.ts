@@ -1,12 +1,13 @@
 import { NextConfig } from "next";
 
 /** @type {import('next').NextConfig} */
-const nextConfig:NextConfig = {
+const nextConfig: NextConfig = {
   output: 'export',
   images: {
-    unoptimized: true, 
+    unoptimized: true,
   },
-  // assetPrefix: './',   
+  trailingSlash: true,
+  // assetPrefix: './',
 };
 
 export default nextConfig;

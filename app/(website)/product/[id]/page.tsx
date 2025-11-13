@@ -1,23 +1,23 @@
-import products from "@/constant/Products";
-import ProductDetailsPage, {
-        type Product,
-} from "@/src/Components/ProductDetail/ProductDetailPage";
-import { notFound } from "next/navigation";
-
-const typedProducts = products as Product[];
+import Products from "@/constant/Products";
+import ProductDetailsPage from "@/src/Components/ProductDetail/ProductDetailPage";
 
 export async function generateStaticParams() {
-        return typedProducts.map((product) => ({
-                id: product._id,
-        }));
+  return Products.map((p) => ({
+    id: String(p._id),
+  }));
 }
 
-export default function Product({ params }: { params: { id: string } }) {
-        const product = typedProducts.find((item) => item._id === params.id);
+export default async function Product({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params; 
 
-        if (!product) {
-                notFound();
-        }
+  const product = Products.find((p) => String(p._id) === String(id));
 
-        return <ProductDetailsPage product={product} />;
+  if (!product)
+    return (
+      <div className="min-h-screen flex items-center justify-center text-xl">
+        Product Not Found
+      </div>
+    );
+
+  return <ProductDetailsPage product={product} />;
 }

@@ -34,7 +34,7 @@ const Navbar = ({ isDark = true }: { isDark?: boolean }) => {
     {name:"Our Pioneering Brand", href:"/our-pioneering-brand"},
     // { name: "Blogs", href: "/blog" },
     { name: "Careers", href: "/careers" },
-    { name: "Contact Us", href: "/contact" },
+    // { name: "Contact Us", href: "/contact" },
   ];
 
   const SubNavLinks = [
