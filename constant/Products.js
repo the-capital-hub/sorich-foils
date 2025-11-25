@@ -9,6 +9,10 @@ import img8 from "@/public/productDetail/paperband2.jpg";
 import img9 from "@/public/productDetail/MonoCarton.png";
 import img10 from "@/public/productDetail/PharmaCartoning.png";
 
+import crFoilImage1 from "@/public/productDetail/cr-foils5.webp";
+import crFoilImage2 from "@/public/productDetail/cr-foil-4.jpg";
+import crFoilImage3 from "@/public/productDetail/cr-foil-3.jpg";
+
 import banner1 from "@/public/productDetail/banner1.webp";
 import banner2 from "@/public/productDetail/Blister2.webp";
 import banner4 from "@/public/productDetail/lidbanner.png";
@@ -125,6 +129,7 @@ const products = [
     bannerImg: banner1,
     detailImg: detailImg1,
     desc: "CR (Child-Resistant) Foil minimizes accidental ingestion risks, used for prescription drugs, OTC medicines, and chemicals.",
+    gallery: [crFoilImage1, crFoilImage2, crFoilImage3],
     aboutSection: {
       heading: "Enhanced Safety Standards",
       paragraphs: [

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import circularBg from "@/public/circularBg.svg";
 
@@ -9,10 +9,11 @@ interface Product {
   _id: string;
   title: string;
   subtitle: string;
-  img: any;
-  bannerImg: any;
-  detailImg: any;
+  img: StaticImageData | string;
+  bannerImg: StaticImageData | string;
+  detailImg: StaticImageData | string;
   desc: string;
+  gallery?: StaticImageData[];
   aboutSection: {
     heading: string;
     paragraphs: string[];
@@ -114,6 +115,33 @@ export default function ProductDetailsPage({ product }: { product: Product }) {
           </div>
         </div>
       </section>
+
+      {product.gallery && product.gallery.length > 0 && (
+        <section className="py-16 px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center">
+              CR Foil | Child-Resistant Safety Solutions
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {product.gallery.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg bg-white"
+                >
+                  <Image
+                    src={image}
+                    alt={`${product.title} gallery image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Features */}
       <section className="pt-16 px-4 sm:px-6 lg:px-8 relative z-10">
