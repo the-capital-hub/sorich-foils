@@ -125,11 +125,11 @@ const products = [
     _id: "671fb91a6b8f4c1e24a9f103",
     title: "CR Foil",
     subtitle: "Child-Resistant Safety Solutions",
-    img: img3,
-    bannerImg: banner1,
-    detailImg: detailImg1,
+    img: crFoilImage3,
+    bannerImg: crFoilImage1,
+    detailImg: crFoilImage2,
     desc: "CR (Child-Resistant) Foil minimizes accidental ingestion risks, used for prescription drugs, OTC medicines, and chemicals.",
-    gallery: [crFoilImage1, crFoilImage2, crFoilImage3],
+    // gallery: [crFoilImage1, crFoilImage2, crFoilImage3],
     aboutSection: {
       heading: "Enhanced Safety Standards",
       paragraphs: [
